@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gallery — New Slavery</title>
+<style>
+  body {
+    font-family: "Segoe UI", sans-serif;
+    padding: 2rem;
+    background: #fafafa;
+    text-align: center;
+  }
+  .gallery-container {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .gallery-img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.2);
+  }
+  .nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #b30000;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    user-select: none;
+  }
+  #prevBtn {
+    left: -60px;
+  }
+  #nextBtn {
+    right: -60px;
+  }
+  .nav-btn:hover {
+    background-color: #8a0000;
+  }
+</style>
+</head>
+<body>
+
+<h1>Illustrations Gallery</h1>
+
+<div class="gallery-container">
+  <button id="prevBtn" class="nav-btn">&#8592;</button>
+  <img id="galleryImage" src="../images/skica1.png" alt="Illustrations gallery" class="gallery-img" />
+  <button id="nextBtn" class="nav-btn">&#8594;</button>
+</div>
+
+<script>
+  const images = [];
+  for(let i=1; i<=30; i++) {
+    images.push(`skica${i}.png`);
+  }
+  let currentIndex = 0;
+
+  const galleryImage = document.getElementById('galleryImage');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  function showImage(index) {
+    if(index < 0) index = images.length - 1;
+    if(index >= images.length) index = 0;
+    currentIndex = index;
+    galleryImage.src = '../images/' + images[currentIndex];
+  }
+
+  prevBtn.addEventListener('click', () => {
+    showImage(currentIndex - 1);
+  });
+
+  nextBtn.addEventListener('click', () => {
+    showImage(currentIndex + 1);
+  });
+</script>
+
+</body>
+</html>

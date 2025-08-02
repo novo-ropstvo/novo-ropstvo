@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Uveri se da si u root folderu repozitorijuma
+echo "Provera trenutnog direktorijuma: $(pwd)"
+
+if [ ! -d "sr" ]; then
+  echo "Folder 'sr' ne postoji u trenutnom direktorijumu!"
+  exit 1
+fi
+
+# Premesti fajlove iz sr/ u root (izuzimajući . i ..)
+echo "Premestanje fajlova iz sr/ u root..."
+mv sr/* .
+
+# Premesti skrivene fajlove (.htaccess, .gitignore itd)
+shopt -s dotglob
+mv sr/.* .
+shopt -u dotglob
+
+# Obriši prazan sr folder
+rmdir sr && echo "Folder 'sr' obrisan."
+
+# Dodaj promene u git
+git add .
+
+# Napravi commit sa opisom
+git commit -m "Premestanje sadržaja iz sr/ u root za GitHub Pages"
+
+# Push na main branch
+git push
+
+echo "Skripta je završila sa radom. Sadržaj je premesten, commitovan i push-ovan."
