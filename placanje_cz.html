@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <title>Platba a stažení knihy</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background-color: #f9f9f9;
+      color: #222;
+    }
+    h1 {
+      color: #b30000;
+    }
+    .section {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 700px;
+      margin: 2rem auto;
+    }
+    .qr-code {
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .qr-code img {
+      max-width: 250px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Platba a stažení knihy</h1>
+
+  <div class="section">
+    <h2>Údaje pro platbu v rámci ČR</h2>
+    <p><strong>Částka:</strong> 99 CZK</p>
+    <ul>
+      <li><strong>Příjemce:</strong> Marjan Mitrović</li>
+      <li><strong>Banka:</strong> Česká spořitelna</li>
+      <li><strong>Číslo účtu:</strong> 3138469083 / 0800</li>
+      <li><strong>IBAN:</strong> CZ1208000000003138469083</li>
+      <li><strong>SWIFT/BIC:</strong> GIBACZPX</li>
+      <li><strong>Účel platby:</strong> dar na knihu</li>
+    </ul>
+    <div class="qr-code">
+      <p>Naskenujte QR kód pro rychlou platbu:</p>
+      <img src="images/barkod.png" alt="QR kód">
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Zadejte kód pro stažení knihy</h2>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeQyaGP0BwtOPn0nKhY-7UvklUPbY2t1x0FEHBYR0HzzK8niQ/viewform?embedded=true"
+            width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">
+      Načítání…
+    </iframe>
+  </div>
+
+</body>
+</html>
