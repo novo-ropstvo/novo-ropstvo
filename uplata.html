@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Uplata i preuzimanje knjige</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #fff;
+      font-family: sans-serif;
+      padding: 2em;
+      text-align: center;
+    }
+    .qr {
+      margin-top: 1em;
+    }
+    input[type="text"] {
+      padding: 0.5em;
+      font-size: 1.1em;
+      margin-top: 1em;
+      width: 300px;
+    }
+    button {
+      padding: 0.6em 1.2em;
+      font-size: 1.1em;
+      margin-top: 1em;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Uplata knjige „Novo ropstvo”</h1>
+  <p><strong>Iznos:</strong> 399 RSD</p>
+  <p><strong>Primalac:</strong> Marjan Mitrović</p>
+  <p><strong>Broj računa:</strong> 3138469083 / 0800</p>
+
+  <div class="qr">
+    <img src="images/barkod.png" alt="QR kod za uplatu" width="250" />
+  </div>
+
+  <h2>Unesi kod za preuzimanje</h2>
+  <form action="otkljucaj.html" method="GET">
+    <input type="text" name="kod" placeholder="Unesite kod" required />
+    <br />
+    <button type="submit">Otključaj preuzimanje</button>
+  </form>
+</body>
+</html>
