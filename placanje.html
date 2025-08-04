@@ -1,69 +1,24 @@
 <!DOCTYPE html>
-<html lang="sr">
-<head>
-  <meta charset="UTF-8" />
-  <title>Uplata</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 2rem;
-      background-color: #f9f9f9;
-      color: #222;
-    }
-    h1 {
-      color: #b30000;
-    }
-    .section {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      max-width: 700px;
-      margin: 2rem auto;
-    }
-    .section h2 {
-      color: #b30000;
-    }
-    .qr-code {
-      text-align: center;
-      margin-top: 1rem;
-    }
-    .qr-code img {
-      max-width: 250px;
-    }
-  </style>
-</head>
-<body>
-
-  <h1>Uplata i preuzimanje knjige</h1>
-
-  <div class="section">
-    <h2>Uplata iz Srbije (u dinarima)</h2>
-    <p><strong>Iznos:</strong> 399 RSD</p>
-    <p>Uplatu možete izvršiti iz bilo koje banke u Srbiji kao međunarodnu uplatu. Nije vam potreban devizni račun.</p>
-    <ul>
-      <li><strong>Primalac:</strong> Marjan Mitrović</li>
-      <li><strong>Banka:</strong> Česká spořitelna</li>
-      <li><strong>Račun:</strong> 3138469083 / 0800</li>
-      <li><strong>IBAN:</strong> CZ1208000000003138469083</li>
-      <li><strong>SWIFT/BIC:</strong> GIBACZPX</li>
-      <li><strong>Svrha uplate:</strong> donacija knjiga</li>
-    </ul>
-    <p>Uplata se vrši u dinarima, a vaša banka automatski konvertuje iznos u češke krune (CZK) po dnevnom kursu.</p>
-    <div class="qr-code">
-      <p>Skenirajte BAR kod za brzu uplatu:</p>
-      <img src="images/barkod.png" alt="QR kod za uplatu">
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>Unos koda za preuzimanje</h2>
-    <p>Nakon uplate, unesite kod koji ste dobili:</p>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeQyaGP0BwtOPn0nKhY-7UvklUPbY2t1x0FEHBYR0HzzK8niQ/viewform?embedded=true"
-            width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">
-      Učitavanje…
-    </iframe>
-  </div>
-
-</body>
-</html>
+<html><head><meta charset="utf-8"/><title>Uplata</title><style>
+.lang-switch {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 999;
+  background: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.2);
+}
+.lang-switch a {
+  margin: 0 5px;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+</style></head><body>
+<div class="lang-switch">
+<a href="index.html">🇷🇸</a>
+<a href="index_en.html">🇬🇧</a>
+<a href="index_cz.html">🇨🇿</a>
+</div>
+<h1>Podaci za uplatu</h1></body></html>

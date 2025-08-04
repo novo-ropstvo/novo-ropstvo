@@ -1,102 +1,24 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset='utf-8'>
-  <title>Galerija</title>
-  
-<style>
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
-}
-.gallery img {
-  max-width: 300px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-.gallery img:hover {
-  transform: scale(1.05);
-}
-#lightbox {
+<html><head><meta charset="utf-8"/><title>Galerija</title><style>
+.lang-switch {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.8);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-#lightbox img {
-  max-width: 90%;
-  max-height: 90%;
+  top: 10px;
+  right: 10px;
+  z-index: 999;
+  background: #fff;
+  padding: 6px 12px;
   border-radius: 8px;
-  box-shadow: 0 0 20px rgba(255,255,255,0.4);
+  box-shadow: 0 0 6px rgba(0,0,0,0.2);
 }
-</style>
-
-</head>
-<body>
-  
-<h1>Galerija knjige</h1>
-
-<div class="gallery">
-  <img src="images/skica1.png" alt="skica1.png" onclick="openLightbox(this.src)">
-  <img src="images/skica2.png" alt="skica2.png" onclick="openLightbox(this.src)">
-  <img src="images/skica3.png" alt="skica3.png" onclick="openLightbox(this.src)">
-  <img src="images/skica4.png" alt="skica4.png" onclick="openLightbox(this.src)">
-  <img src="images/skica5.png" alt="skica5.png" onclick="openLightbox(this.src)">
-  <img src="images/skica6.png" alt="skica6.png" onclick="openLightbox(this.src)">
-  <img src="images/skica7.png" alt="skica7.png" onclick="openLightbox(this.src)">
-  <img src="images/skica8.png" alt="skica8.png" onclick="openLightbox(this.src)">
-  <img src="images/skica9.png" alt="skica9.png" onclick="openLightbox(this.src)">
-  <img src="images/skica10.png" alt="skica10.png" onclick="openLightbox(this.src)">
-  <img src="images/skica11.png" alt="skica11.png" onclick="openLightbox(this.src)">
-  <img src="images/skica12.png" alt="skica12.png" onclick="openLightbox(this.src)">
-  <img src="images/skica13.png" alt="skica13.png" onclick="openLightbox(this.src)">
-  <img src="images/skica14.png" alt="skica14.png" onclick="openLightbox(this.src)">
-  <img src="images/skica15.png" alt="skica15.png" onclick="openLightbox(this.src)">
-  <img src="images/skica16.png" alt="skica16.png" onclick="openLightbox(this.src)">
-  <img src="images/skica17.png" alt="skica17.png" onclick="openLightbox(this.src)">
-  <img src="images/skica18.png" alt="skica18.png" onclick="openLightbox(this.src)">
-  <img src="images/skica19.png" alt="skica19.png" onclick="openLightbox(this.src)">
-  <img src="images/skica20.png" alt="skica20.png" onclick="openLightbox(this.src)">
-  <img src="images/skica21.png" alt="skica21.png" onclick="openLightbox(this.src)">
-  <img src="images/skica22.png" alt="skica22.png" onclick="openLightbox(this.src)">
-  <img src="images/skica23.png" alt="skica23.png" onclick="openLightbox(this.src)">
-  <img src="images/skica24.png" alt="skica24.png" onclick="openLightbox(this.src)">
-  <img src="images/skica25.png" alt="skica25.png" onclick="openLightbox(this.src)">
-  <img src="images/skica26.png" alt="skica26.png" onclick="openLightbox(this.src)">
-  <img src="images/skica27.png" alt="skica27.png" onclick="openLightbox(this.src)">
-  <img src="images/skica28.png" alt="skica28.png" onclick="openLightbox(this.src)">
-  <img src="images/skica29.png" alt="skica29.png" onclick="openLightbox(this.src)">
-  <img src="images/skica30.png" alt="skica30.png" onclick="openLightbox(this.src)">
+.lang-switch a {
+  margin: 0 5px;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+</style></head><body>
+<div class="lang-switch">
+<a href="index.html">🇷🇸</a>
+<a href="index_en.html">🇬🇧</a>
+<a href="index_cz.html">🇨🇿</a>
 </div>
-
-  
-<div id="lightbox" onclick="closeLightbox()">
-  <img id="lightbox-img" src="" alt="Preview">
-</div>
-
-  
-<script>
-function openLightbox(src) {
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  lightboxImg.src = src;
-  lightbox.style.display = 'flex';
-}
-function closeLightbox() {
-  document.getElementById('lightbox').style.display = 'none';
-}
-</script>
-
-</body>
-</html>
+<h1>Galerija knjige</h1></body></html>
