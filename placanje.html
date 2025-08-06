@@ -1,5 +1,46 @@
 <!DOCTYPE html>
-<html><head><meta charset="utf-8"/><title>Uplata</title><style>
+<html lang="sr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Uplata</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+h1 {
+  text-align: center;
+  color: #b30000;
+}
+.qr {
+  text-align: center;
+  margin: 20px 0;
+}
+.qr img {
+  max-width: 200px;
+  height: auto;
+}
+.payment-details {
+  background: #f0f0f0;
+  padding: 15px;
+  border-radius: 8px;
+}
+.payment-details p {
+  margin: 8px 0;
+}
 .lang-switch {
   position: fixed;
   top: 10px;
@@ -15,10 +56,96 @@
   text-decoration: none;
   font-size: 1.2rem;
 }
-</style></head><body>
-<div class="lang-switch">
-<a href="index.html">🇷🇸</a>
-<a href="index_en.html">🇬🇧</a>
-<a href="index_cz.html">🇨🇿</a>
+.paysend {
+  margin-top: 20px;
+  background: #eaf5ea;
+  padding: 15px;
+  border-radius: 8px;
+}
+</style>
+</head>
+<body>
+
+<style>
+.top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-family: Arial, sans-serif;
+    z-index: 99999;
+}
+.top-nav a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.top-nav a:hover {
+    color: #b30000;
+}
+.lang-switch {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+.lang-switch a {
+    margin: 0 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+body {
+    padding-top: 60px;
+}
+</style>
+
+<div class="top-nav">
+    <a href="index.html">Početna</a>
+    <a href="galerija.html">Galerija</a>
+    <a href="placanje.html">Uplata</a>
+    <div class="lang-switch">
+        <a href="index.html">🇷🇸</a>
+        <a href="index_en.html">🇬🇧</a>
+        <a href="index_cz.html">🇨🇿</a>
+    </div>
 </div>
-<h1>Podaci za uplatu</h1></body></html>
+
+<div class="container">
+<h1>Podaci za uplatu</h1>
+
+<div class="qr">
+<img src="images/barkod.png" alt="QR kod za uplatu">
+<p>Skenirajte QR kod ili koristite podatke ispod.</p>
+</div>
+
+<div class="payment-details">
+<p><strong>Cena:</strong> 399 RSD</p>
+<p><strong>IBAN:</strong> CZ65 0800 0000 0012 3456 7899</p>
+<p><strong>SWIFT/BIC:</strong> GIBACZPX</p>
+<p><strong>Primaoc:</strong> Marjan Mitrović</p>
+<p><strong>Svrha uplate:</strong> Novo Ropstvo - e-knjiga</p>
+</div>
+
+<div class="paysend">
+<h3>Uplata preko Paysend aplikacije</h3>
+<ol>
+<li>Preuzmite Paysend aplikaciju sa <a href="https://paysend.com" target="_blank">zvaničnog sajta</a> ili prodavnice aplikacija.</li>
+<li>Registrujte se ili prijavite u aplikaciju.</li>
+<li>Izaberite opciju za slanje novca u inostranstvo.</li>
+<li>Unesite gore navedeni IBAN i SWIFT/BIC kod.</li>
+<li>Iznos: <strong>399 RSD</strong> (automatska konverzija u CZK).</li>
+<li>Potvrdite uplatu. Transakcija je brza, pouzdana i sa niskom provizijom.</li>
+</ol>
+</div>
+
+<p style="text-align:center; margin-top:20px;">Nakon uplate, dobićete kod za preuzimanje knjige.</p>
+</div>
+
+</body>
+</html>

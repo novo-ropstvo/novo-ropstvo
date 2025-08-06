@@ -197,28 +197,76 @@
     margin-bottom: 0.5rem;
   }
 }
+<style>
+.top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-family: Arial, sans-serif;
+    z-index: 99999;
+}
+.top-nav a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 6px 10px;
+}
+.top-nav a:hover {
+    color: #b30000;
+}
+.lang-switch {
+    display: flex;
+    gap: 5px;
+    margin-left: auto;
+    margin-right: 20px;
+}
+.lang-switch a {
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+body {
+    padding-top: 60px;
+}
+@media (max-width: 768px) {
+    .top-nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .top-nav a {
+        font-size: 1.1rem;
+        padding: 8px 12px;
+    }
+    .lang-switch {
+        margin: 0;
+        justify-content: center;
+    }
+}
+</style>
+
 
 </style>
 </head>
 <body>
-<div class="lang-switch">
-<a href="index.html">🇷🇸</a>
-<a href="index_en.html">🇬🇧</a>
-<a href="index_cz.html">🇨🇿</a>
+<div class="top-nav">
+    <a href="index.html">Početna</a>
+    <a href="galerija.html">Galerija</a>
+    <a href="placanje.html">Uplata</a>
+    <div class="lang-switch">
+        <a href="index.html">🇷🇸</a>
+        <a href="index_en.html">🇬🇧</a>
+        <a href="index_cz.html">🇨🇿</a>
+    </div>
 </div>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm mb-4">
-<div class="container">
-<a class="navbar-brand" href="index.html">Novo Ropstvo</a>
-<div class="ms-auto">
-<div aria-label="Izbor jezika" class="btn-group" role="group">
-<a class="btn btn-outline-primary active" href="../sr/index.html">SR</a>
-<a class="btn btn-outline-primary" href="../sr/galerija.html">Galerija</a>
-<a class="btn btn-outline-primary" href="../sr/placanje.html">Uplata</a>
-</div>
-</div>
-</div>
-</nav>
 <div class="hero animate__animated animate__fadeInDown">
 <img alt="Naslovna knjige Novo Ropstvo" class="cover" src="images/Cover_mobile.png" class="cover img-fluid"/>
 <h1 class="animate__animated animate__fadeInUp">„Novo Ropstvo“</h1>
