@@ -1,221 +1,169 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="sr">
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Galerija knjige</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet"/>
-    <style>
-    .lang-switch {
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        z-index: 999;
-        background: #fff;
-        padding: 6px 12px;
-        border-radius: 8px;
-        box-shadow: 0 0 6px rgba(0,0,0,0.2);
-    }
-    .lang-switch a {
-        margin: 0 5px;
-        text-decoration: none;
-        font-size: 1.2rem;
-    }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Novo Ropstvo — Galerija</title>
+  <meta name="description" content="Galerija ilustracija iz romana Novo Ropstvo.">
+  <link rel="canonical" href="./galerija.html">
+  <style>
+    :root { --max:1200px; }
+    *{box-sizing:border-box}
+    body{margin:0;font:16px/1.5 system-ui,Segoe UI,Roboto,Arial,sans-serif;background:#0b0f12;color:#e8e8e8}
+    header,footer{max-width:var(--max);margin:0 auto;padding:16px}
+    nav a{color:#e8e8e8;text-decoration:none;margin-right:16px;opacity:.85}
+    nav a:hover,nav a[aria-current="page"]{opacity:1;text-decoration:underline}
+    .wrap{max-width:var(--max);margin:0 auto;padding:16px}
+    h1{margin:8px 0 16px;font-size:clamp(22px,3vw,32px)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+    .card{border-radius:14px;overflow:hidden;background:#12171c;border:1px solid #1f2a33}
+    .card img{display:block;width:100%;height:220px;object-fit:cover}
+    footer{opacity:.8;font-size:14px}
+    a.btn{display:inline-block;margin:6px 0 14px;padding:10px 14px;border-radius:10px;border:1px solid #2a3945}
+    .topbar{background:#0f1419;border-bottom:1px solid #1f2a33}
+  </style>
 </head>
 <body>
-<div class="lang-switch">
-    <a href="index.html">🇷🇸</a>
-    <a href="index_en.html">🇬🇧</a>
-    <a href="index_cz.html">🇨🇿</a>
-</div>
-<div class="container py-5">
-    <h1 class="mb-4 text-center">Galerija knjige</h1>
-    <div class="row">
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica1.png" data-lightbox="galerija" data-title="Galerija knjige - Skica 1">
-                <img src="images/skica1.png" alt="Skica 1" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica2.png" data-lightbox="galerija" data-title="Galerija knjige - Skica 2">
-                <img src="images/skica2.png" alt="Skica 2" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica3.png" data-lightbox="galerija" data-title="Galerija knjige - Skica 3">
-                <img src="images/skica3.png" alt="Skica 3" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica4.png" data-lightbox="galerija" data-title="Galerija knjige - Skica 4">
-                <img src="images/skica4.png" alt="Skica 4" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica5.png" data-lightbox="galerija" data-title="Galerija knjige - Skica 5">
-                <img src="images/skica5.png" alt="Skica 5" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica6.png" data-lightbox="galerija" data-title="Galerija knjige - Skica 6">
-                <img src="images/skica6.png" alt="Skica 6" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica7.png" data-lightbox="galerija" data-title="Galerija knjige - Skica 7">
-                <img src="images/skica7.png" alt="Skica 7" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica8.png" data-lightbox="galerija" data-title="Galerija knjige - Skica 8">
-                <img src="images/skica8.png" alt="Skica 8" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica9.png" data-lightbox="galerija" data-title="Galerija knjige - Skica 9">
-                <img src="images/skica9.png" alt="Skica 9" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica10.png" data-lightbox="galerija" data-title="Galerija knjige - Skica 10">
-                <img src="images/skica10.png" alt="Skica 10" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica11.png" data-lightbox="galerija" data-title="Galerija knjige - Skica 11">
-                <img src="images/skica11.png" alt="Skica 11" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica12.png" data-lightbox="galerija" data-title="Galerija knjige - Skica 12">
-                <img src="images/skica12.png" alt="Skica 12" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica13.png" data-lightbox="galerija" data-title="Galerija knjige - Skica 13">
-                <img src="images/skica13.png" alt="Skica 13" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica14.png" data-lightbox="galerija" data-title="Galerija knjige - Skica 14">
-                <img src="images/skica14.png" alt="Skica 14" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica15.png" data-lightbox="galerija" data-title="Galerija knjige - Skica 15">
-                <img src="images/skica15.png" alt="Skica 15" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica16.png" data-lightbox="galerija" data-title="Galerija knjige - Skica 16">
-                <img src="images/skica16.png" alt="Skica 16" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica17.png" data-lightbox="galerija" data-title="Galerija knjige - Skica 17">
-                <img src="images/skica17.png" alt="Skica 17" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica18.png" data-lightbox="galerija" data-title="Galerija knjige - Skica 18">
-                <img src="images/skica18.png" alt="Skica 18" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica19.png" data-lightbox="galerija" data-title="Galerija knjige - Skica 19">
-                <img src="images/skica19.png" alt="Skica 19" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica20.png" data-lightbox="galerija" data-title="Galerija knjige - Skica 20">
-                <img src="images/skica20.png" alt="Skica 20" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica21.png" data-lightbox="galerija" data-title="Galerija knjige - Skica 21">
-                <img src="images/skica21.png" alt="Skica 21" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica22.png" data-lightbox="galerija" data-title="Galerija knjige - Skica 22">
-                <img src="images/skica22.png" alt="Skica 22" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica23.png" data-lightbox="galerija" data-title="Galerija knjige - Skica 23">
-                <img src="images/skica23.png" alt="Skica 23" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica24.png" data-lightbox="galerija" data-title="Galerija knjige - Skica 24">
-                <img src="images/skica24.png" alt="Skica 24" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica25.png" data-lightbox="galerija" data-title="Galerija knjige - Skica 25">
-                <img src="images/skica25.png" alt="Skica 25" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica26.png" data-lightbox="galerija" data-title="Galerija knjige - Skica 26">
-                <img src="images/skica26.png" alt="Skica 26" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica27.png" data-lightbox="galerija" data-title="Galerija knjige - Skica 27">
-                <img src="images/skica27.png" alt="Skica 27" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica28.png" data-lightbox="galerija" data-title="Galerija knjige - Skica 28">
-                <img src="images/skica28.png" alt="Skica 28" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica29.png" data-lightbox="galerija" data-title="Galerija knjige - Skica 29">
-                <img src="images/skica29.png" alt="Skica 29" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica30.png" data-lightbox="galerija" data-title="Galerija knjige - Skica 30">
-                <img src="images/skica30.png" alt="Skica 30" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-    </div>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+  <div class="topbar">
+    <header>
+      <nav aria-label="Glavna navigacija">
+        <a href="./index.html">Početna</a>
+        <a href="./galerija.html" aria-current="page">Galerija</a>
+        <a href="./placanje.html">Uplata</a>
+      </nav>
+    </header>
+  </div>
+
+  <main class="wrap">
+    <h1>Galerija knjige</h1>
+    <p><a class="btn" href="./index.html">← Nazad na početnu</a></p>
+
+    <section class="grid" aria-label="Galerija slika">
+      <!-- samo slike -->
+      <figure class="card">
+        <a href="./images/skica1.png"><img src="./images/skica1.png" loading="lazy" alt=""></a>
+      </figure>
+
+      <figure class="card">
+        <a href="./images/skica2.png"><img src="./images/skica2.png" loading="lazy" alt=""></a>
+      </figure>
+
+      <figure class="card">
+        <a href="./images/skica3.png"><img src="./images/skica3.png" loading="lazy" alt=""></a>
+      </figure>
+
+      <figure class="card">
+        <a href="./images/skica4.png"><img src="./images/skica4.png" loading="lazy" alt=""></a>
+      </figure>
+
+      <figure class="card">
+        <a href="./images/skica5.png"><img src="./images/skica5.png" loading="lazy" alt=""></a>
+      </figure>
+
+      <figure class="card">
+        <a href="./images/skica6.png"><img src="./images/skica6.png" loading="lazy" alt=""></a>
+      </figure>
+
+      <figure class="card">
+        <a href="./images/skica7.png"><img src="./images/skica7.png" loading="lazy" alt=""></a>
+      </figure>
+
+      <figure class="card">
+        <a href="./images/skica8.png"><img src="./images/skica8.png" loading="lazy" alt=""></a>
+      </figure>
+
+      <figure class="card">
+        <a href="./images/skica9.png"><img src="./images/skica9.png" loading="lazy" alt=""></a>
+      </figure>
+
+      <figure class="card">
+        <a href="./images/skica10.png"><img src="./images/skica10.png" loading="lazy" alt=""></a>
+      </figure>
+
+      <figure class="card">
+        <a href="./images/skica11.png"><img src="./images/skica11.png" loading="lazy" alt=""></a>
+      </figure>
+
+      <figure class="card">
+        <a href="./images/skica12.png"><img src="./images/skica12.png" loading="lazy" alt=""></a>
+      </figure>
+
+      <figure class="card">
+        <a href="./images/skica13.png"><img src="./images/skica13.png" loading="lazy" alt=""></a>
+      </figure>
+
+      <figure class="card">
+        <a href="./images/skica14.png"><img src="./images/skica14.png" loading="lazy" alt=""></a>
+      </figure>
+
+      <figure class="card">
+        <a href="./images/skica15.png"><img src="./images/skica15.png" loading="lazy" alt=""></a>
+      </figure>
+
+      <figure class="card">
+        <a href="./images/skica16.png"><img src="./images/skica16.png" loading="lazy" alt=""></a>
+      </figure>
+
+      <figure class="card">
+        <a href="./images/skica17.png"><img src="./images/skica17.png" loading="lazy" alt=""></a>
+      </figure>
+
+      <figure class="card">
+        <a href="./images/skica18.png"><img src="./images/skica18.png" loading="lazy" alt=""></a>
+      </figure>
+
+      <figure class="card">
+        <a href="./images/skica19.png"><img src="./images/skica19.png" loading="lazy" alt=""></a>
+      </figure>
+
+      <figure class="card">
+        <a href="./images/skica20.png"><img src="./images/skica20.png" loading="lazy" alt=""></a>
+      </figure>
+
+      <figure class="card">
+        <a href="./images/skica21.png"><img src="./images/skica21.png" loading="lazy" alt=""></a>
+      </figure>
+
+      <figure class="card">
+        <a href="./images/skica22.png"><img src="./images/skica22.png" loading="lazy" alt=""></a>
+      </figure>
+
+      <figure class="card">
+        <a href="./images/skica23.png"><img src="./images/skica23.png" loading="lazy" alt=""></a>
+      </figure>
+
+      <figure class="card">
+        <a href="./images/skica24.png"><img src="./images/skica24.png" loading="lazy" alt=""></a>
+      </figure>
+
+      <figure class="card">
+        <a href="./images/skica25.png"><img src="./images/skica25.png" loading="lazy" alt=""></a>
+      </figure>
+
+      <figure class="card">
+        <a href="./images/skica26.png"><img src="./images/skica26.png" loading="lazy" alt=""></a>
+      </figure>
+
+      <figure class="card">
+        <a href="./images/skica27.png"><img src="./images/skica27.png" loading="lazy" alt=""></a>
+      </figure>
+
+      <figure class="card">
+        <a href="./images/skica28.png"><img src="./images/skica28.png" loading="lazy" alt=""></a>
+      </figure>
+
+      <figure class="card">
+        <a href="./images/skica29.png"><img src="./images/skica29.png" loading="lazy" alt=""></a>
+      </figure>
+
+      <figure class="card">
+        <a href="./images/skica30.png"><img src="./images/skica30.png" loading="lazy" alt=""></a>
+      </figure>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Marjan Mitrović — Sva prava zadržana · <a href="./index.html">Početna</a>
+  </footer>
 </body>
 </html>
