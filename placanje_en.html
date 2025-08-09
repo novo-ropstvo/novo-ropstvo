@@ -1,115 +1,75 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<script src="./js/lang-switcher.js" defer></script>
-
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Uplata</title>
-<style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f9f9f9;
-  color: #333;
-  line-height: 1.6;
-}
-.container {
-  max-width: 800px;
-  margin: auto;
-  padding: 20px;
-  background: #fff;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  border-radius: 10px;
-}
-h1 {
-  text-align: center;
-  color: #b30000;
-}
-.qr {
-  text-align: center;
-  margin: 20px 0;
-}
-.qr img {
-  max-width: 200px;
-  height: auto;
-}
-.payment-details {
-  background: #f0f0f0;
-  padding: 15px;
-  border-radius: 8px;
-}
-.payment-details p {
-  margin: 8px 0;
-}
-.lang-switch {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  z-index: 999;
-  background: #fff;
-  padding: 6px 12px;
-  border-radius: 8px;
-  box-shadow: 0 0 6px rgba(0,0,0,0.2);
-}
-.lang-switch a {
-  margin: 0 5px;
-  text-decoration: none;
-  font-size: 1.2rem;
-}
-.paysend {
-  margin-top: 20px;
-  background: #eaf5ea;
-  padding: 15px;
-  border-radius: 8px;
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Payment — Novo Ropstvo</title>
+  <meta name="description" content="Payment instructions for the book Novo Ropstvo (bank transfer).">
+  <link rel="canonical" href="./placanje_en.html">
+  <script src="./js/lang-switcher.js" defer></script>
+  <style>
+    :root { --max:860px }
+    *{box-sizing:border-box} body{margin:0;background:#0b0f12;color:#e8e8e8;font:16px/1.5 system-ui,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:#cde3ff} .wrap{max-width:var(--max);margin:0 auto;padding:24px}
+    h1{margin:8px 0 4px;font-size:clamp(22px,3vw,32px)} h2{margin:24px 0 8px}
+    .card{background:#10161c;border:1px solid #1f2a33;border-radius:14px;padding:16px;margin:12px 0}
+    .grid{display:grid;gap:16px} @media(min-width:720px){.grid{grid-template-columns:1.1fr .9fr}}
+    .kvs div{display:flex;align-items:center;gap:8px;margin:6px 0}
+    .btn{padding:10px 14px;border:1px solid #2a3945;border-radius:10px;background:#0f1419;color:#e8e8e8;cursor:pointer}
+    .note{opacity:.8;font-size:14px} img{max-width:100%;height:auto;border-radius:12px;border:1px solid #1f2a33}
+    nav a{margin-right:14px;opacity:.9;text-decoration:none} nav a:hover{opacity:1;text-decoration:underline}
+    header,footer{max-width:var(--max);margin:0 auto;padding:16px}
+  </style>
 </head>
 <body>
+<header>
+  <nav>
+    <a href="./index_en.html">Home</a>
+    <a href="./galerija_en.html">Gallery</a>
+    <a href="./placanje_en.html" aria-current="page">Payment</a>
+  </nav>
+</header>
 
-<div class="top-nav">
-    <a href="index_en.html">Home</a>
-    <a href="galerija_en.html">Gallery</a>
-    <a href="placanje_en.html">Payment</a>
-    <div class="lang-switch">
-        <a href="index.html">🇷🇸</a>
-        <a href="index_en.html">🇬🇧</a>
-        <a href="index_cz.html">🇨🇿</a>
-    </div>
-</div>
+<main class="wrap">
+  <h1>Payment</h1>
+  <p class="note">Price: <strong><span id="amount">3.49 EUR</span></strong> (one‑time). After paying, enter your code to download the EPUB.</p>
 
+  <div class="grid">
+    <section class="card">
+      <h2>Bank transfer (IBAN)</h2>
+      <div class="kvs">
+        <div>Beneficiary: <strong><span id="accname">ACCOUNT_NAME_HERE</span></strong></div>
+        <div>IBAN: <strong><span id="iban">IBAN_HERE</span></strong> <button class="btn" id="cpyIban">Copy IBAN</button></div>
+        <div>SWIFT/BIC: <strong><span id="bic">BIC_SWIFT_HERE</span></strong> <button class="btn" id="cpyBic">Copy</button></div>
+        <div>Amount: <strong><span id="amt">3.49 EUR</span></strong> <button class="btn" id="cpyAmt">Copy amount</button></div>
+        <div>Payment note: <strong><span id="msg">Novo Ropstvo — buyer email</span></strong> <button class="btn" id="cpyMsg">Copy note</button></div>
+      </div>
+      <p class="note">Tip: put your email in the payment note so we can issue your code quickly.</p>
+    </section>
 
-<div class="container">
-<h1>Payment Information</h1>
+    <aside class="card">
+      <h2>QR (informational)</h2>
+      <img src="./images/barkod.png" alt="QR with account details">
+      <p class="note">Some banking apps may not create the payment automatically. If needed, copy IBAN/amount.</p>
+    </aside>
+  </div>
 
-<div class="qr">
-<img src="images/barkod.png" alt="QR kod za uplatu">
-<p>Scan the QR code or use the details below.</p>
-</div>
+  <p><a href="./kod.html"><strong>Already paid? Enter your code →</strong></a></p>
+</main>
 
-<div class="payment-details">
-<p><strong>Price:</strong> €3.49</p>
-<p><strong>IBAN:</strong> CZ65 0800 0000 0012 3456 7899</p>
-<p><strong>SWIFT/BIC:</strong> GIBACZPX</p>
-<p><strong>Recipient:</strong> Marjan Mitrović</p>
-<p><strong>Payment Reference:</strong> Novo Ropstvo - e-book</p>
-</div>
+<footer>
+  © 2025 Marjan Mitrović — All rights reserved
+</footer>
 
-<div class="paysend">
-<h3>Payment via Paysend App</h3>
-<ol>
-<li>Download the Paysend app from the <a href="https://paysend.com" target="_blank">official website</a> or your app store.</li>
-<li>Register or log in.</li>
-<li>Select the option to send money abroad.</li>
-<li>Enter the IBAN and SWIFT/BIC code above.</li>
-<li>Amount: <strong>€3.49</strong> (automatic conversion to CZK).</li>
-<li>Confirm payment. The transaction is fast, reliable, and has low fees.</li>
-</ol>
-</div>
-
-<p style="text-align:center; margin-top:20px;">After payment, you will receive a code to download the book.</p>
-</div>
-
+<script>
+function copyTxt(id){
+  const t = document.getElementById(id).textContent.trim();
+  navigator.clipboard.writeText(t).then(()=>alert('✅ Copied: '+t)).catch(()=>alert('❗ Copy failed'));
+}
+document.getElementById('cpyIban').onclick = ()=>copyTxt('iban');
+document.getElementById('cpyBic').onclick  = ()=>copyTxt('bic');
+document.getElementById('cpyAmt').onclick  = ()=>copyTxt('amt');
+document.getElementById('cpyMsg').onclick  = ()=>copyTxt('msg');
+</script>
 </body>
 </html>

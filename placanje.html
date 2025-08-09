@@ -1,153 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="sr">
 <head>
-<script src="./js/lang-switcher.js" defer></script>
-
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Uplata</title>
-<style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f9f9f9;
-  color: #333;
-  line-height: 1.6;
-}
-.container {
-  max-width: 800px;
-  margin: auto;
-  padding: 20px;
-  background: #fff;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  border-radius: 10px;
-}
-h1 {
-  text-align: center;
-  color: #b30000;
-}
-.qr {
-  text-align: center;
-  margin: 20px 0;
-}
-.qr img {
-  max-width: 200px;
-  height: auto;
-}
-.payment-details {
-  background: #f0f0f0;
-  padding: 15px;
-  border-radius: 8px;
-}
-.payment-details p {
-  margin: 8px 0;
-}
-.lang-switch {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  z-index: 999;
-  background: #fff;
-  padding: 6px 12px;
-  border-radius: 8px;
-  box-shadow: 0 0 6px rgba(0,0,0,0.2);
-}
-.lang-switch a {
-  margin: 0 5px;
-  text-decoration: none;
-  font-size: 1.2rem;
-}
-.paysend {
-  margin-top: 20px;
-  background: #eaf5ea;
-  padding: 15px;
-  border-radius: 8px;
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Uplata — Novo Ropstvo</title>
+  <meta name="description" content="Podaci za uplatu knjige Novo Ropstvo (bankovni transfer / Paysend).">
+  <link rel="canonical" href="./placanje.html">
+  <script src="./js/lang-switcher.js" defer></script>
+  <style>
+    :root { --max:860px }
+    *{box-sizing:border-box} body{margin:0;background:#0b0f12;color:#e8e8e8;font:16px/1.5 system-ui,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:#cde3ff} .wrap{max-width:var(--max);margin:0 auto;padding:24px}
+    h1{margin:8px 0 4px;font-size:clamp(22px,3vw,32px)} h2{margin:24px 0 8px}
+    .card{background:#10161c;border:1px solid #1f2a33;border-radius:14px;padding:16px;margin:12px 0}
+    .grid{display:grid;gap:16px} @media(min-width:720px){.grid{grid-template-columns:1.1fr .9fr}}
+    .kvs div{display:flex;align-items:center;gap:8px;margin:6px 0}
+    .btn{padding:10px 14px;border:1px solid #2a3945;border-radius:10px;background:#0f1419;color:#e8e8e8;cursor:pointer}
+    .note{opacity:.8;font-size:14px} img{max-width:100%;height:auto;border-radius:12px;border:1px solid #1f2a33}
+    nav a{margin-right:14px;opacity:.9;text-decoration:none} nav a:hover{opacity:1;text-decoration:underline}
+    header,footer{max-width:var(--max);margin:0 auto;padding:16px}
+  </style>
 </head>
 <body>
+<header>
+  <nav>
+    <a href="./index.html">Početna</a>
+    <a href="./galerija.html">Galerija</a>
+    <a href="./placanje.html" aria-current="page">Uplata</a>
+  </nav>
+</header>
 
-<style>
-.top-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    padding: 10px 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    font-family: Arial, sans-serif;
-    z-index: 99999;
+<main class="wrap">
+  <h1>Uplata knjige</h1>
+  <p class="note">Cena: <strong><span id="amount">399 RSD</span></strong> (jednokratno). Nakon uplate, unesite kod i preuzmite EPUB.</p>
+
+  <div class="grid">
+    <section class="card">
+      <h2>Bankovni transfer (IBAN)</h2>
+      <div class="kvs">
+        <div>Primalac: <strong><span id="accname">ACCOUNT_NAME_HERE</span></strong></div>
+        <div>IBAN: <strong><span id="iban">IBAN_HERE</span></strong> <button class="btn" id="cpyIban">Kopiraj IBAN</button></div>
+        <div>SWIFT/BIC: <strong><span id="bic">BIC_SWIFT_HERE</span></strong> <button class="btn" id="cpyBic">Kopiraj</button></div>
+        <div>Iznos: <strong><span id="iznos">399 RSD</span></strong> <button class="btn" id="cpyAmt">Kopiraj iznos</button></div>
+        <div>Svrha/Opis: <strong><span id="msg">Novo Ropstvo – email kupca</span></strong> <button class="btn" id="cpyMsg">Kopiraj opis</button></div>
+      </div>
+      <p class="note">💡 Preporuka: u „Svrha/Opis“ upišite svoj email radi izdavanja koda.</p>
+    </section>
+
+    <aside class="card">
+      <h2>QR za uplatu (informativni)</h2>
+      <img src="./images/barkod.png" alt="QR za uplatu (informacije o računu)">
+      <p class="note">Ovaj QR prikazuje podatke (ime i broj računa). Neke banke neće otvoriti nalog automatski. Po potrebi ručno kopirajte IBAN/iznos.</p>
+    </aside>
+  </div>
+
+  <section class="card">
+    <h2>Paysend (RSD → isti IBAN)</h2>
+    <ol>
+      <li>Otvorite aplikaciju <strong>Paysend</strong> (ili instalirajte),</li>
+      <li>Izaberite slanje u <strong>RSD</strong> na <strong>IBAN</strong> (<em>isti gore naveden</em>),</li>
+      <li>Unesite iznos <strong>399 RSD</strong> i opis „Novo Ropstvo – vaš email“,</li>
+      <li>Potvrdite uplatu (konverzija u CZK se vrši automatski).</li>
+    </ol>
+    <p class="note">Napomena: Sve tri jezičke verzije koriste isti IBAN; razlikuju se samo valuta/opis.</p>
+  </section>
+
+  <p><a href="./kod.html"><strong>Već si uplatio? Unesi kod →</strong></a></p>
+</main>
+
+<footer>
+  © 2025 Marjan Mitrović — Sva prava zadržana
+</footer>
+
+<script>
+function copyTxt(id){
+  const t = document.getElementById(id).textContent.trim();
+  navigator.clipboard.writeText(t).then(()=>alert('✅ Kopirano: '+t)).catch(()=>alert('❗ Kopiranje neuspešno'));
 }
-.top-nav a {
-    text-decoration: none;
-    color: #000;
-    font-size: 1rem;
-    font-weight: bold;
-}
-.top-nav a:hover {
-    color: #b30000;
-}
-.lang-switch {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-}
-.lang-switch a {
-    margin: 0 5px;
-    text-decoration: none;
-    font-size: 1.2rem;
-}
-body {
-    padding-top: 60px;
-}
-</style>
-
-<div class="top-nav">
-    <a href="index.html">Početna</a>
-    <a href="galerija.html">Galerija</a>
-    <a href="placanje.html">Uplata</a>
-    <div class="lang-switch">
-        <a href="index.html">🇷🇸</a>
-        <a href="index_en.html">🇬🇧</a>
-        <a href="index_cz.html">🇨🇿</a>
-    </div>
-</div>
-
-<div class="container">
-<h1>Podaci za uplatu</h1>
-
-<div class="qr">
-<img src="images/barkod.png" alt="QR kod za uplatu">
-<p>Skenirajte QR kod ili koristite podatke ispod.</p>
-</div>
-
-<div class="payment-details">
-<p><strong>Cena:</strong> 399 RSD</p>
-<p><strong>IBAN:</strong> CZ65 0800 0000 0012 3456 7899</p>
-<p><strong>SWIFT/BIC:</strong> GIBACZPX</p>
-<p><strong>Primaoc:</strong> Marjan Mitrović</p>
-<p><strong>Svrha uplate:</strong> Novo Ropstvo - e-knjiga</p>
-</div>
-
-<div class="paysend">
-<h3>Uplata preko Paysend aplikacije</h3>
-<ol>
-<li>Preuzmite Paysend aplikaciju sa <a href="https://paysend.com" target="_blank">zvaničnog sajta</a> ili prodavnice aplikacija.</li>
-<li>Registrujte se ili prijavite u aplikaciju.</li>
-<li>Izaberite opciju za slanje novca u inostranstvo.</li>
-<li>Unesite gore navedeni IBAN i SWIFT/BIC kod.</li>
-<li>Iznos: <strong>399 RSD</strong> (automatska konverzija u CZK).</li>
-<li>Potvrdite uplatu. Transakcija je brza, pouzdana i sa niskom provizijom.</li>
-</ol>
-</div>
-
-<p style="text-align:center; margin-top:20px;">Nakon uplate, dobićete kod za preuzimanje knjige.</p>
-</div>
-
+document.getElementById('cpyIban').onclick = ()=>copyTxt('iban');
+document.getElementById('cpyBic').onclick  = ()=>copyTxt('bic');
+document.getElementById('cpyAmt').onclick  = ()=>copyTxt('iznos');
+document.getElementById('cpyMsg').onclick  = ()=>copyTxt('msg');
+</script>
 </body>
 </html>

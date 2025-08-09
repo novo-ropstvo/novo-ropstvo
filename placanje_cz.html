@@ -1,115 +1,75 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="cs">
 <head>
-<script src="./js/lang-switcher.js" defer></script>
-
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Uplata</title>
-<style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f9f9f9;
-  color: #333;
-  line-height: 1.6;
-}
-.container {
-  max-width: 800px;
-  margin: auto;
-  padding: 20px;
-  background: #fff;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  border-radius: 10px;
-}
-h1 {
-  text-align: center;
-  color: #b30000;
-}
-.qr {
-  text-align: center;
-  margin: 20px 0;
-}
-.qr img {
-  max-width: 200px;
-  height: auto;
-}
-.payment-details {
-  background: #f0f0f0;
-  padding: 15px;
-  border-radius: 8px;
-}
-.payment-details p {
-  margin: 8px 0;
-}
-.lang-switch {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  z-index: 999;
-  background: #fff;
-  padding: 6px 12px;
-  border-radius: 8px;
-  box-shadow: 0 0 6px rgba(0,0,0,0.2);
-}
-.lang-switch a {
-  margin: 0 5px;
-  text-decoration: none;
-  font-size: 1.2rem;
-}
-.paysend {
-  margin-top: 20px;
-  background: #eaf5ea;
-  padding: 15px;
-  border-radius: 8px;
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Platba — Novo Ropstvo</title>
+  <meta name="description" content="Pokyny k platbě za knihu Novo Ropstvo (bankovní převod).">
+  <link rel="canonical" href="./placanje_cz.html">
+  <script src="./js/lang-switcher.js" defer></script>
+  <style>
+    :root { --max:860px }
+    *{box-sizing:border-box} body{margin:0;background:#0b0f12;color:#e8e8e8;font:16px/1.5 system-ui,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:#cde3ff} .wrap{max-width:var(--max);margin:0 auto;padding:24px}
+    h1{margin:8px 0 4px;font-size:clamp(22px,3vw,32px)} h2{margin:24px 0 8px}
+    .card{background:#10161c;border:1px solid #1f2a33;border-radius:14px;padding:16px;margin:12px 0}
+    .grid{display:grid;gap:16px} @media(min-width:720px){.grid{grid-template-columns:1.1fr .9fr}}
+    .kvs div{display:flex;align-items:center;gap:8px;margin:6px 0}
+    .btn{padding:10px 14px;border:1px solid #2a3945;border-radius:10px;background:#0f1419;color:#e8e8e8;cursor:pointer}
+    .note{opacity:.8;font-size:14px} img{max-width:100%;height:auto;border-radius:12px;border:1px solid #1f2a33}
+    nav a{margin-right:14px;opacity:.9;text-decoration:none} nav a:hover{opacity:1;text-decoration:underline}
+    header,footer{max-width:var(--max);margin:0 auto;padding:16px}
+  </style>
 </head>
 <body>
+<header>
+  <nav>
+    <a href="./index_cz.html">Domů</a>
+    <a href="./galerija_cz.html">Galerie</a>
+    <a href="./placanje_cz.html" aria-current="page">Platba</a>
+  </nav>
+</header>
 
-<div class="top-nav">
-    <a href="index_cz.html">Domů</a>
-    <a href="galerija_cz.html">Galerie</a>
-    <a href="placanje_cz.html">Platba</a>
-    <div class="lang-switch">
-        <a href="index.html">🇷🇸</a>
-        <a href="index_en.html">🇬🇧</a>
-        <a href="index_cz.html">🇨🇿</a>
-    </div>
-</div>
+<main class="wrap">
+  <h1>Platba</h1>
+  <p class="note">Cena: <strong><span id="amount">částka v CZK (dle konverze z 3.49 EUR)</span></strong>. Po zaplacení zadejte kód a stáhněte EPUB.</p>
 
+  <div class="grid">
+    <section class="card">
+      <h2>Bankovní převod (IBAN)</h2>
+      <div class="kvs">
+        <div>Příjemce: <strong><span id="accname">ACCOUNT_NAME_HERE</span></strong></div>
+        <div>IBAN: <strong><span id="iban">IBAN_HERE</span></strong> <button class="btn" id="cpyIban">Kopírovat IBAN</button></div>
+        <div>SWIFT/BIC: <strong><span id="bic">BIC_SWIFT_HERE</span></strong> <button class="btn" id="cpyBic">Kopírovat</button></div>
+        <div>Částka: <strong><span id="amt">CZK dle konverze</span></strong> <button class="btn" id="cpyAmt">Kopírovat částku</button></div>
+        <div>Zpráva pro příjemce: <strong><span id="msg">Novo Ropstvo — email kupujícího</span></strong> <button class="btn" id="cpyMsg">Kopírovat zprávu</button></div>
+      </div>
+      <p class="note">Tip: Uveďte svůj email ve zprávě pro příjemce pro rychlé vystavení kódu.</p>
+    </section>
 
-<div class="container">
-<h1>Platební údaje</h1>
+    <aside class="card">
+      <h2>QR (informační)</h2>
+      <img src="./images/barkod.png" alt="QR s údaji o účtu">
+      <p class="note">Některé bankovní aplikace nezaloží platbu automaticky. V případě potřeby zkopírujte IBAN/částku ručně.</p>
+    </aside>
+  </div>
 
-<div class="qr">
-<img src="images/barkod.png" alt="QR kod za uplatu">
-<p>Naskenujte QR kód nebo použijte údaje níže.</p>
-</div>
+  <p><a href="./kod.html"><strong>Už zaplaceno? Zadejte kód →</strong></a></p>
+</main>
 
-<div class="payment-details">
-<p><strong>Cena:</strong> 99 Kč</p>
-<p><strong>IBAN:</strong> CZ65 0800 0000 0012 3456 7899</p>
-<p><strong>SWIFT/BIC:</strong> GIBACZPX</p>
-<p><strong>Příjemce:</strong> Marjan Mitrović</p>
-<p><strong>Účel platby:</strong> Novo Ropstvo - e-kniha</p>
-</div>
+<footer>
+  © 2025 Marjan Mitrović — Všechna práva vyhrazena
+</footer>
 
-<div class="paysend">
-<h3>Platba přes aplikaci Paysend</h3>
-<ol>
-<li>Stáhněte si aplikaci Paysend z <a href="https://paysend.com" target="_blank">oficiálních stránek</a> nebo z obchodu s aplikacemi.</li>
-<li>Zaregistrujte se nebo se přihlaste.</li>
-<li>Vyberte možnost poslat peníze do zahraničí.</li>
-<li>Zadejte výše uvedený IBAN a SWIFT/BIC kód.</li>
-<li>Částka: <strong>99 Kč</strong> (automatický převod z CZK).</li>
-<li>Potvrďte platbu. Transakce je rychlá, spolehlivá a s nízkým poplatkem.</li>
-</ol>
-</div>
-
-<p style="text-align:center; margin-top:20px;">Po zaplacení obdržíte kód pro stažení knihy.</p>
-</div>
-
+<script>
+function copyTxt(id){
+  const t = document.getElementById(id).textContent.trim();
+  navigator.clipboard.writeText(t).then(()=>alert('✅ Zkopírováno: '+t)).catch(()=>alert('❗ Kopírování selhalo'));
+}
+document.getElementById('cpyIban').onclick = ()=>copyTxt('iban');
+document.getElementById('cpyBic').onclick  = ()=>copyTxt('bic');
+document.getElementById('cpyAmt').onclick  = ()=>copyTxt('amt');
+document.getElementById('cpyMsg').onclick  = ()=>copyTxt('msg');
+</script>
 </body>
 </html>
