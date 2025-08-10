@@ -37,11 +37,15 @@ header,footer{max-width:var(--max);margin:0 auto;padding:16px}
 </head>
 <body>
 <header>
-  <nav>
-    <a href="./index_cz.html">Domů</a>
-    <a href="./galerija_cz.html">Galerie</a>
-    <a href="./placanje_cz.html" aria-current="page">Platba</a>
-  </nav>
+ <!-- Jazykový přepínač -->
+<nav style="position:fixed;top:12px;right:16px;display:flex;gap:10px;font-size:14px">
+  <a href="#" data-lang="sr" title="Srbsky">SR</a>
+  <a href="#" data-lang="en" title="Anglicky">EN</a>
+  <a href="#" data-lang="cz" title="Česky">CZ</a>
+</nav>
+<script src="./js/lang-switcher.js?v=3" defer></script>
+
+
 </header>
 
 <main class="wrap">

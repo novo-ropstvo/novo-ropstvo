@@ -37,11 +37,14 @@ header,footer{max-width:var(--max);margin:0 auto;padding:16px}
 </head>
 <body>
 <header>
-  <nav>
-    <a href="./index_en.html">Home</a>
-    <a href="./galerija_en.html">Gallery</a>
-    <a href="./placanje_en.html" aria-current="page">Payment</a>
-  </nav>
+  <!-- Language switcher -->
+<nav style="position:fixed;top:12px;right:16px;display:flex;gap:10px;font-size:14px">
+  <a href="#" data-lang="sr" title="Serbian">SR</a>
+  <a href="#" data-lang="en" title="English">EN</a>
+  <a href="#" data-lang="cz" title="Czech">CZ</a>
+</nav>
+<script src="./js/lang-switcher.js?v=3" defer></script>
+
 </header>
 
 <main class="wrap">
