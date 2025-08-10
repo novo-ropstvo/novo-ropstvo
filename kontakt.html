@@ -66,49 +66,48 @@ header,footer{max-width:var(--max);margin:0 auto;padding:16px}
 <footer>© 2025 Marjan Mitrović — Sva prava zadržana</footer>
 
 <script>
-
 // ——— KONFIG ———
 window.FORMSPREE_URL = "https://formspree.io/f/xyzpljrg";
-
-
 
 const f = document.getElementById('contactForm');
 const m = document.getElementById('msg');
 const mailto = document.getElementById('mailto');
 
-// Mali indikator da znamo šta je učitano (može da se obriše posle testiranja)
-console.log("Formspree endpoint:", window.FORMSPREE_URL);
-
-// fallback mailto
+// mailto fallback
 function setMailto() {
   const data = new FormData(f);
   const from = (data.get('email')||'').trim();
   const name = (data.get('name')||'').trim();
   const body = (data.get('message')||'').trim();
-  const subj = encodeURIComponent("Zpráva ze stránek — Novo Ropstvo");
-  const txt  = encodeURIComponent(`Jméno: ${name}\nEmail: ${from}\n\n${body}`);
+  const subj = encodeURIComponent("Poruka sa sajta — Novo Ropstvo");
+  const txt  = encodeURIComponent(`Ime: ${name}\nEmail: ${from}\n\n${body}`);
   mailto.href = `mailto:marjan.posao@gmail.com?subject=${subj}&body=${txt}`;
 }
-['input','change'].forEach(ev=>f.addEventListener(ev,setMailto)); setMailto();
+['input','change'].forEach(ev=>f.addEventListener(ev,setMailto));
+setMailto();
 
 f.addEventListener('submit', async (e) => {
   e.preventDefault();
-  m.textContent = "⏳ Odesílání…";
+  m.textContent = "⏳ Slanje…";
   const data = new FormData(f);
-  if (data.get('_gotcha')) { m.textContent = "❌ Chyba."; return; }
+  if (data.get('_gotcha')) { m.textContent = "❌ Greška."; return; }
 
   const endpoint = (window.FORMSPREE_URL || "").trim();
-  if (!endpoint) {
-    m.textContent = "✉️ Formspree zatím není připojen. Použijte odkaz výše.";
-    return;
-  }
+  if (!endpoint) { m.textContent = "✉️ Formspree još nije povezan. Koristite link iznad."; return; }
+
   try {
     const r = await fetch(endpoint, { method:"POST", body:data, headers:{ "Accept":"application/json" }});
-    if (r.ok) { m.textContent = "✅ Odesláno. Děkujeme!"; f.reset(); setMailto(); }
-    else { const t = await r.json().catch(()=>({})); m.textContent = t?.error || "❌ Nelze odeslat. Zkuste později."; }
-  } catch(_) { m.textContent = "❌ Síťová chyba. Zkuste znovu."; }
+    if (r.ok) { m.textContent = "✅ Poruka poslata. Hvala!"; f.reset(); setMailto(); }
+    else {
+      const t = await r.json().catch(()=>({}));
+      m.textContent = t?.error || "❌ Slanje neuspešno. Pokušajte kasnije.";
+    }
+  } catch(_) {
+    m.textContent = "❌ Mrežna greška. Pokušajte ponovo.";
+  }
 });
 </script>
+
 
 </body>
 </html>
