@@ -1,11 +1,13 @@
 <!doctype html>
-<html lang="sr">
+<html lang="cs">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Kontakt — Novo Ropstvo</title>
-<meta name="description" content="Kontaktirajte autora knjige Novo Ropstvo.">
-<link rel="canonical" href="./kontakt.html">
-<script src="./js/lang-switcher.js" defer></script>
+<meta name="description" content="Kontaktujte autora knihy Novo Ropstvo.">
+<link rel="canonical" href="./kontakt_cz.html">
+<script src="./js/lang-switcher.js?v=2" defer></script>
+<link rel="alternate" hreflang="sr" href="./kontakt.html">
+<link rel="alternate" hreflang="en" href="./kontakt_en.html">
 <style>
 :root{--max:720px}*{box-sizing:border-box}body{margin:0;background:#0b0f12;color:#e8e8e8;font:16px/1.5 system-ui,Segoe UI,Roboto,Arial,sans-serif}
 .wrap{max-width:var(--max);margin:0 auto;padding:24px}
@@ -26,20 +28,11 @@ header,footer{max-width:var(--max);margin:0 auto;padding:16px}
 <body>
 <header>
   <nav class="nav">
-    <a href="./index.html">Početna</a>
-    <a href="./galerija.html">Galerija</a>
-    <a href="./placanje.html">Uplata</a>
-    <a href="./kontakt.html" aria-current="page">Kontakt</a>
+    <a href="./index_cz.html">Domů</a>
+    <a href="./galerija_cz.html">Galerie</a>
+    <a href="./placanje_cz.html">Platba</a>
+    <a href="./kontakt_cz.html" aria-current="page">Kontakt</a>
   </nav>
-
-  <!-- Jezički preklopnik -->
-  <nav style="position:fixed;top:12px;right:16px;display:flex;gap:10px;font-size:14px">
-    <a href="#" data-lang="sr" title="Srpski">SR</a>
-    <a href="#" data-lang="en" title="English">EN</a>
-    <a href="#" data-lang="cz" title="Česky">CZ</a>
-  </nav>
-  <script src="./js/lang-switcher.js?v=3" defer></script>
-
 </header>
 
 <main class="wrap">
@@ -48,31 +41,30 @@ header,footer{max-width:var(--max);margin:0 auto;padding:16px}
     <form id="contactForm">
       <div class="row">
         <div>
-          <label>Ime</label>
-          <input name="name" placeholder="Vaše ime" required>
+          <label>Jméno</label>
+          <input name="name" placeholder="Vaše jméno" required>
         </div>
         <div>
           <label>Email</label>
-          <input type="email" name="email" placeholder="vas@email.com" required>
+          <input type="email" name="email" placeholder="vy@email.com" required>
         </div>
       </div>
-      <label>Poruka</label>
-      <textarea name="message" placeholder="Napišite poruku…" required></textarea>
+      <label>Zpráva</label>
+      <textarea name="message" placeholder="Napište zprávu…" required></textarea>
 
-      <!-- Honeypot -->
       <input class="hp" name="_gotcha" tabindex="-1" autocomplete="off">
 
       <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
-        <button type="submit">Pošalji</button>
-        <a id="mailto" href="#" class="note" style="align-self:center">…ili pošalji iz svog klijenta</a>
+        <button type="submit">Odeslat</button>
+        <a id="mailto" href="#" class="note" style="align-self:center">…nebo poslat z e-mailového klienta</a>
       </div>
       <div class="msg" id="msg"></div>
     </form>
-    <p class="note">Odgovaramo u najkraćem roku. Polja sa * su obavezna.</p>
+    <p class="note">Odpovíme co nejdříve. Povinná pole jsou označena *.</p>
   </div>
 </main>
 
-<footer>© 2025 Marjan Mitrović — Sva prava zadržana</footer>
+<footer>© 2025 Marjan Mitrović — Všechna práva vyhrazena</footer>
 
 <script>
 // ——— KONFIG ———
@@ -82,14 +74,13 @@ const f = document.getElementById('contactForm');
 const m = document.getElementById('msg');
 const mailto = document.getElementById('mailto');
 
-// mailto fallback
 function setMailto() {
   const data = new FormData(f);
   const from = (data.get('email')||'').trim();
   const name = (data.get('name')||'').trim();
   const body = (data.get('message')||'').trim();
-  const subj = encodeURIComponent("Poruka sa sajta — Novo Ropstvo");
-  const txt  = encodeURIComponent(`Ime: ${name}\nEmail: ${from}\n\n${body}`);
+  const subj = encodeURIComponent("Zpráva ze stránek — Novo Ropstvo");
+  const txt  = encodeURIComponent(`Jméno: ${name}\nEmail: ${from}\n\n${body}`);
   mailto.href = `mailto:marjan.posao@gmail.com?subject=${subj}&body=${txt}`;
 }
 ['input','change'].forEach(ev=>f.addEventListener(ev,setMailto));
@@ -97,26 +88,22 @@ setMailto();
 
 f.addEventListener('submit', async (e) => {
   e.preventDefault();
-  m.textContent = "⏳ Slanje…";
+  m.textContent = "⏳ Odesílání…";
   const data = new FormData(f);
-  if (data.get('_gotcha')) { m.textContent = "❌ Greška."; return; }
+  if (data.get('_gotcha')) { m.textContent = "❌ Chyba."; return; }
 
   const endpoint = (window.FORMSPREE_URL || "").trim();
-  if (!endpoint) { m.textContent = "✉️ Formspree još nije povezan. Koristite link iznad."; return; }
+  if (!endpoint) {
+    m.textContent = "✉️ Formspree zatím není připojen. Použijte odkaz výše.";
+    return;
+  }
 
   try {
     const r = await fetch(endpoint, { method:"POST", body:data, headers:{ "Accept":"application/json" }});
-    if (r.ok) { m.textContent = "✅ Poruka poslata. Hvala!"; f.reset(); setMailto(); }
-    else {
-      const t = await r.json().catch(()=>({}));
-      m.textContent = t?.error || "❌ Slanje neuspešno. Pokušajte kasnije.";
-    }
-  } catch(_) {
-    m.textContent = "❌ Mrežna greška. Pokušajte ponovo.";
-  }
+    if (r.ok) { m.textContent = "✅ Odesláno. Děkujeme!"; f.reset(); setMailto(); }
+    else { const t = await r.json().catch(()=>({})); m.textContent = t?.error || "❌ Nelze odeslat. Zkuste později."; }
+  } catch(_) { m.textContent = "❌ Síťová chyba. Zkuste znovu."; }
 });
 </script>
-
-
 </body>
 </html>

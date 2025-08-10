@@ -31,15 +31,6 @@ header,footer{max-width:var(--max);margin:0 auto;padding:16px}
     <a href="./placanje.html">Uplata</a>
     <a href="./kontakt.html" aria-current="page">Kontakt</a>
   </nav>
-
-  <!-- Jezički preklopnik -->
-  <nav style="position:fixed;top:12px;right:16px;display:flex;gap:10px;font-size:14px">
-    <a href="#" data-lang="sr" title="Srpski">SR</a>
-    <a href="#" data-lang="en" title="English">EN</a>
-    <a href="#" data-lang="cz" title="Česky">CZ</a>
-  </nav>
-  <script src="./js/lang-switcher.js?v=3" defer></script>
-
 </header>
 
 <main class="wrap">
