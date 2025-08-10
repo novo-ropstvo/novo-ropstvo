@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="sr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kontakt — Novo Ropstvo</title>
+<meta name="description" content="Kontaktirajte autora knjige Novo Ropstvo.">
+<link rel="canonical" href="./kontakt.html">
+<script src="./js/lang-switcher.js" defer></script>
+<style>
+:root{--max:720px}*{box-sizing:border-box}body{margin:0;background:#0b0f12;color:#e8e8e8;font:16px/1.5 system-ui,Segoe UI,Roboto,Arial,sans-serif}
+.wrap{max-width:var(--max);margin:0 auto;padding:24px}
+h1{margin:8px 0 16px;font-size:clamp(22px,3vw,32px)}
+.card{background:#10161c;border:1px solid #1f2a33;border-radius:14px;padding:16px;margin:12px 0}
+label{display:block;margin:8px 0 4px}
+input,textarea,button{width:100%;padding:12px 14px;border-radius:10px;border:1px solid #2a3945;background:#0f1419;color:#e8e8e8}
+textarea{min-height:160px;resize:vertical}
+button{cursor:pointer}
+.row{display:grid;gap:12px}@media(min-width:640px){.row{grid-template-columns:1fr 1fr}}
+.msg{margin-top:10px;font-size:14px}
+.nav a{margin-right:14px;opacity:.9;text-decoration:none}.nav a:hover{opacity:1;text-decoration:underline}
+header,footer{max-width:var(--max);margin:0 auto;padding:16px}
+.note{opacity:.8;font-size:14px}
+.hp{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+</style>
+</head>
+<body>
+<header>
+  <nav class="nav">
+    <a href="./index.html">Početna</a>
+    <a href="./galerija.html">Galerija</a>
+    <a href="./placanje.html">Uplata</a>
+    <a href="./kontakt.html" aria-current="page">Kontakt</a>
+  </nav>
+</header>
+
+<main class="wrap">
+  <h1>Kontakt</h1>
+  <div class="card">
+    <form id="contactForm">
+      <div class="row">
+        <div>
+          <label>Ime</label>
+          <input name="name" placeholder="Vaše ime" required>
+        </div>
+        <div>
+          <label>Email</label>
+          <input type="email" name="email" placeholder="vas@email.com" required>
+        </div>
+      </div>
+      <label>Poruka</label>
+      <textarea name="message" placeholder="Napišite poruku…" required></textarea>
+
+      <!-- Honeypot -->
+      <input class="hp" name="_gotcha" tabindex="-1" autocomplete="off">
+
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+        <button type="submit">Pošalji</button>
+        <a id="mailto" href="#" class="note" style="align-self:center">…ili pošalji iz svog klijenta</a>
+      </div>
+      <div class="msg" id="msg"></div>
+    </form>
+    <p class="note">Odgovaramo u najkraćem roku. Polja sa * su obavezna.</p>
+  </div>
+</main>
+
+<footer>© 2025 Marjan Mitrović — Sva prava zadržana</footer>
+
+<script>
+const FORMSPREE_URL = ""; // ← ubaci npr. "https://formspree.io/f/XXXXABCD" kad bude spremno
+
+const f = document.getElementById('contactForm');
+const m = document.getElementById('msg');
+const mailto = document.getElementById('mailto');
+
+function setMailto() {
+  const data = new FormData(f);
+  const to   = (data.get('email')||'').trim();
+  const name = (data.get('name')||'').trim();
+  const body = (data.get('message')||'').trim();
+  const subj = encodeURIComponent("Poruka sa sajta — Novo Ropstvo");
+  const txt  = encodeURIComponent(`Ime: ${name}\nEmail: ${to}\n\n${body}`);
+  mailto.href = `mailto:marjan@example.com?subject=${subj}&body=${txt}`; // ← po želji promeni email primaoca
+}
+['input','change'].forEach(ev=>f.addEventListener(ev,setMailto)); setMailto();
+
+f.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  m.textContent = "⏳ Slanje…";
+  const data = new FormData(f);
+  if (data.get('_gotcha')) { m.textContent = "❌ Greška."; return; } // bot
+  try {
+    if (!FORMSPREE_URL) { m.textContent = "✉️ Formspree još nije povezan. Koristite 'pošalji iz svog klijenta' link iznad."; return; }
+    const r = await fetch(FORMSPREE_URL, { method:"POST", body:data, headers:{ "Accept":"application/json" }});
+    if (r.ok) {
+      m.textContent = "✅ Poruka poslata. Hvala!";
+      f.reset(); setMailto();
+    } else {
+      const t = await r.json().catch(()=>({}));
+      m.textContent = t?.error || "❌ Slanje neuspešno. Pokušajte kasnije.";
+    }
+  } catch(_) { m.textContent = "❌ Greška pri slanju. Pokušajte ponovo."; }
+});
+</script>
+</body>
+</html>
