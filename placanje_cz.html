@@ -1,43 +1,66 @@
+<!-- placanje_cz.html -->
 <!doctype html>
 <html lang="cs">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Platba — Novo Ropstvo</title>
-<meta name="description" content="Zakupte si knihu 'Novo Ropstvo'.">
+<title>Platba — 99 CZK</title>
+<meta name="description" content="Platba v ČR: 99 CZK přes QR Platbu.">
 <link rel="canonical" href="./placanje_cz.html">
-<link rel="alternate" hreflang="sr" href="./placanje.html">
-<link rel="alternate" hreflang="en" href="./placanje_en.html">
-<link rel="stylesheet" href="./css/style.css">
+<script src="./js/lang-switcher.js?v=3" defer></script>
+<style>
+:root{--max:860px}*{box-sizing:border-box}body{margin:0;background:#0b0f12;color:#e8e8e8;font:16px/1.5 system-ui,Segoe UI,Roboto,Arial}
+.wrap{max-width:var(--max);margin:0 auto;padding:24px}a{color:#cde3ff}
+h1{margin:8px 0 6px;font-size:clamp(22px,3vw,32px)}h2{margin:22px 0 10px}
+.card{background:#10161c;border:1px solid #1f2a33;border-radius:14px;padding:16px;margin:12px 0}
+.grid{display:grid;gap:16px}@media(min-width:900px){.grid{grid-template-columns:1fr 1fr}}
+.kvs div{display:flex;align-items:center;gap:8px;margin:6px 0}
+.btn{padding:10px 14px;border:1px solid #2a3945;border-radius:10px;background:#0f1419;color:#e8e8e8;cursor:pointer}
+.note{opacity:.85;font-size:14px}
+nav a{margin-right:14px;opacity:.9;text-decoration:none}nav a:hover{opacity:1;text-decoration:underline}
+header,footer{max-width:var(--max);margin:0 auto;padding:16px}
+#qr{display:grid;place-items:center}
+</style>
 </head>
 <body>
 <header>
-  <nav class="nav">
+  <nav>
     <a href="./index_cz.html">Domů</a>
     <a href="./galerija_cz.html">Galerie</a>
     <a href="./placanje_cz.html" aria-current="page">Platba</a>
     <a href="./kontakt_cz.html">Kontakt</a>
   </nav>
-
-  <!-- Facebook ikona -->
-  <div class="socials" style="position:fixed;top:12px;right:120px">
-    <a class="social" href="https://www.facebook.com/share/1HiQt3hzhN/" target="_blank" rel="noopener" aria-label="Facebook">
-      <svg viewBox="0 0 24 24" aria-hidden="true" fill="#e8e8e8">
-        <path d="M22 12a10 10 0 1 0-11.56 9.87v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.88h-2.34v6.99A10 10 0 0 0 22 12z"/>
-      </svg>
+  <div style="position:fixed;top:12px;right:120px">
+    <a href="https://www.facebook.com/share/1HiQt3hzhN/" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="#e8e8e8"><path d="M22 12a10 10 0 1 0-11.56 9.87v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.88h-2.34v6.99A10 10 0 0 0 22 12z"/></svg>
     </a>
   </div>
-
-  <!-- Jazykový přepínač -->
   <nav style="position:fixed;top:12px;right:16px;display:flex;gap:10px;font-size:14px">
-    <a href="#" data-lang="sr" title="Srbsky">SR</a>
-    <a href="#" data-lang="en" title="Anglicky">EN</a>
-    <a href="#" data-lang="cz" title="Česky">CZ</a>
+    <a href="#" data-lang="sr">SR</a>
+    <a href="#" data-lang="en">EN</a>
+    <a href="#" data-lang="cz">CZ</a>
   </nav>
-  <script src="./js/lang-switcher.js?v=3" defer></script>
 </header>
 
 <main class="wrap">
-  <!-- Vaše existující české texty pro platbu -->
+  <h1>Česká republika — 99 CZK (QR Platba)</h1>
+  <section class="card">
+    <div class="grid">
+      <div>
+        <div class="kvs">
+          <div>Příjemce: <strong>Marjan Mitrović</strong></div>
+          <div>Účet: <strong>3138469083/0800</strong></div>
+          <div>IBAN: <strong id="iban-cz">CZ5908000000003138469083</strong> <button class="btn" onclick="navigator.clipboard.writeText(document.getElementById('iban-cz').textContent.trim())">Kopírovat IBAN</button></div>
+          <div>SWIFT/BIC: <strong id="bic-cz">GIBACZPX</strong> <button class="btn" onclick="navigator.clipboard.writeText(document.getElementById('bic-cz').textContent.trim())">Kopírovat</button></div>
+          <div>Částka: <strong>99.00 CZK</strong></div>
+          <div>Zpráva pro příjemce: <strong id="msg-cz">Novo Ropstvo – e‑mail kupujícího</strong> <button class="btn" onclick="navigator.clipboard.writeText(document.getElementById('msg-cz').textContent.trim())">Kopírovat zprávu</button></div>
+        </div>
+        <p class="note">Naskenujte QR kód. Bankovní aplikace předvyplní převod na 99 CZK.</p>
+      </div>
+      <aside id="qr">
+        <img src="./images/barkod.png" alt="QR Platba 99 CZK" width="256" height="256" loading="lazy">
+      </aside>
+    </div>
+  </section>
 </main>
 
 <footer>© 2025 Marjan Mitrović — Všechna práva vyhrazena</footer>
