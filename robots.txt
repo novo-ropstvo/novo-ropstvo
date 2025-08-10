@@ -1,4 +1,4 @@
 User-agent: *
-Disallow:
+Allow: /
 
-Sitemap: https://tvoj-sajt/sitemap.xml
+Sitemap: https://novo-ropstvo.github.io/novo-ropstvo/sitemap.xml

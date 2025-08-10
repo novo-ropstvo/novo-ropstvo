@@ -1,32 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://tvoj-sajt/index.html</loc>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://tvoj-sajt/odlomak.html</loc>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://tvoj-sajt/index_en.html</loc>
-  </url>
-  <url>
-    <loc>https://tvoj-sajt/excerpt.html</loc>
-  </url>
-  <url>
-    <loc>https://tvoj-sajt/index_cz.html</loc>
-  </url>
-  <url>
-    <loc>https://tvoj-sajt/ukazka.html</loc>
-  </url>
-  <url>
-    <loc>https://tvoj-sajt/placanje.html</loc>
-  </url>
-  <url>
-    <loc>https://tvoj-sajt/placanje_en.html</loc>
-  </url>
-  <url>
-    <loc>https://tvoj-sajt/placanje_cz.html</loc>
-  </url>
+  <url><loc>https://novo-ropstvo.github.io/novo-ropstvo/index.html</loc></url>
+  <url><loc>https://novo-ropstvo.github.io/novo-ropstvo/index_en.html</loc></url>
+  <url><loc>https://novo-ropstvo.github.io/novo-ropstvo/index_cz.html</loc></url>
+
+  <url><loc>https://novo-ropstvo.github.io/novo-ropstvo/placanje.html</loc></url>
+  <url><loc>https://novo-ropstvo.github.io/novo-ropstvo/placanje_en.html</loc></url>
+  <url><loc>https://novo-ropstvo.github.io/novo-ropstvo/placanje_cz.html</loc></url>
+
+  <url><loc>https://novo-ropstvo.github.io/novo-ropstvo/galerija.html</loc></url>
+  <url><loc>https://novo-ropstvo.github.io/novo-ropstvo/galerija_en.html</loc></url>
+  <url><loc>https://novo-ropstvo.github.io/novo-ropstvo/galerija_cz.html</loc></url>
+
+  <url><loc>https://novo-ropstvo.github.io/novo-ropstvo/kontakt.html</loc></url>
+  <url><loc>https://novo-ropstvo.github.io/novo-ropstvo/kontakt_en.html</loc></url>
+  <url><loc>https://novo-ropstvo.github.io/novo-ropstvo/kontakt_cz.html</loc></url>
 </urlset>
