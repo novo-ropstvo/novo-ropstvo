@@ -1,25 +1,25 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Payment — Novo Ropstvo</title>
-  <meta name="description" content="Payment instructions for the book Novo Ropstvo (bank transfer).">
-  <link rel="canonical" href="./placanje_en.html">
-  <script src="./js/lang-switcher.js" defer></script>
-  <style>
-    :root { --max:860px }
-    *{box-sizing:border-box} body{margin:0;background:#0b0f12;color:#e8e8e8;font:16px/1.5 system-ui,Segoe UI,Roboto,Arial,sans-serif}
-    a{color:#cde3ff} .wrap{max-width:var(--max);margin:0 auto;padding:24px}
-    h1{margin:8px 0 4px;font-size:clamp(22px,3vw,32px)} h2{margin:24px 0 8px}
-    .card{background:#10161c;border:1px solid #1f2a33;border-radius:14px;padding:16px;margin:12px 0}
-    .grid{display:grid;gap:16px} @media(min-width:720px){.grid{grid-template-columns:1.1fr .9fr}}
-    .kvs div{display:flex;align-items:center;gap:8px;margin:6px 0}
-    .btn{padding:10px 14px;border:1px solid #2a3945;border-radius:10px;background:#0f1419;color:#e8e8e8;cursor:pointer}
-    .note{opacity:.8;font-size:14px} img{max-width:100%;height:auto;border-radius:12px;border:1px solid #1f2a33}
-    nav a{margin-right:14px;opacity:.9;text-decoration:none} nav a:hover{opacity:1;text-decoration:underline}
-    header,footer{max-width:var(--max);margin:0 auto;padding:16px}
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Payment — Novo Ropstvo</title>
+<meta name="description" content="Czechia 99 CZK, Serbia 399 RSD, others 3.49 EUR (SEPA/IBAN).">
+<link rel="canonical" href="./placanje_en.html">
+<script src="./js/lang-switcher.js" defer></script>
+<style>
+:root{--max:860px}*{box-sizing:border-box}body{margin:0;background:#0b0f12;color:#e8e8e8;font:16px/1.5 system-ui,Segoe UI,Roboto,Arial,sans-serif}
+a{color:#cde3ff}.wrap{max-width:var(--max);margin:0 auto;padding:24px}
+h1{margin:8px 0 4px;font-size:clamp(22px,3vw,32px)}h2{margin:24px 0 8px}
+.card{background:#10161c;border:1px solid #1f2a33;border-radius:14px;padding:16px;margin:12px 0}
+.grid{display:grid;gap:16px}@media(min-width:900px){.grid{grid-template-columns:1fr 1fr}}
+.kvs div{display:flex;align-items:center;gap:8px;margin:6px 0}
+.btn{padding:10px 14px;border:1px solid #2a3945;border-radius:10px;background:#0f1419;color:#e8e8e8;cursor:pointer}
+.note{opacity:.8;font-size:14px}#qr-cz,#qr-eur{display:grid;place-items:center;min-height:256px}
+.badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.badges a img{height:40px;border-radius:8px;border:1px solid #1f2a33}
+nav a{margin-right:14px;opacity:.9;text-decoration:none}nav a:hover{opacity:1;text-decoration:underline}
+header,footer{max-width:var(--max);margin:0 auto;padding:16px}
+</style>
 </head>
 <body>
 <header>
@@ -32,44 +32,88 @@
 
 <main class="wrap">
   <h1>Payment</h1>
-  <p class="note">Price: <strong><span id="amount">3.49 EUR</span></strong> (one‑time). After paying, enter your code to download the EPUB.</p>
+  <p class="note">After paying, enter your code to download the EPUB: <a href="./kod.html"><strong>Enter code →</strong></a></p>
 
-  <div class="grid">
-    <section class="card">
-      <h2>Bank transfer (IBAN)</h2>
-      <div class="kvs">
-        <div>Beneficiary: <strong><span id="accname">ACCOUNT_NAME_HERE</span></strong></div>
-        <div>IBAN: <strong><span id="iban">IBAN_HERE</span></strong> <button class="btn" id="cpyIban">Copy IBAN</button></div>
-        <div>SWIFT/BIC: <strong><span id="bic">BIC_SWIFT_HERE</span></strong> <button class="btn" id="cpyBic">Copy</button></div>
-        <div>Amount: <strong><span id="amt">3.49 EUR</span></strong> <button class="btn" id="cpyAmt">Copy amount</button></div>
-        <div>Payment note: <strong><span id="msg">Novo Ropstvo — buyer email</span></strong> <button class="btn" id="cpyMsg">Copy note</button></div>
+  <section class="card">
+    <h2>Czechia — 99 CZK (CZ QR Platba)</h2>
+    <div class="grid">
+      <div>
+        <div class="kvs">
+          <div>Beneficiary: <strong>Marjan Mitrović</strong></div>
+          <div>Account: <strong>3138469083/0800</strong></div>
+          <div>IBAN: <strong id="iban-cz">CZ5908000000003138469083</strong> <button class="btn" onclick="copyTxt('iban-cz')">Copy IBAN</button></div>
+          <div>SWIFT/BIC: <strong id="bic-cz">GIBACZPX</strong> <button class="btn" onclick="copyTxt('bic-cz')">Copy</button></div>
+          <div>Amount: <strong id="amt-czk">99.00 CZK</strong> <button class="btn" onclick="copyVal('99.00 CZK')">Copy amount</button></div>
+          <div>Payment note: <strong id="msg-cz">Novo Ropstvo — buyer email</strong> <button class="btn" onclick="copyTxt('msg-cz')">Copy note</button></div>
+        </div>
+        <p class="note">Your banking app should recognise the QR and prefill a 99 CZK payment.</p>
       </div>
-      <p class="note">Tip: put your email in the payment note so we can issue your code quickly.</p>
-    </section>
+      <aside><div id="qr-cz"></div></aside>
+    </div>
+  </section>
 
-    <aside class="card">
-      <h2>QR (informational)</h2>
-      <img src="./images/barkod.png" alt="QR with account details">
-      <p class="note">Some banking apps may not create the payment automatically. If needed, copy IBAN/amount.</p>
-    </aside>
-  </div>
+  <section class="card">
+    <h2>Serbia — 399 RSD (via IBAN or Paysend)</h2>
+    <div class="kvs">
+      <div>Beneficiary: <strong>Marjan Mitrović</strong></div>
+      <div>IBAN: <strong id="iban-rs">CZ5908000000003138469083</strong> <button class="btn" onclick="copyTxt('iban-rs')">Copy IBAN</button></div>
+      <div>SWIFT/BIC: <strong id="bic-rs">GIBACZPX</strong> <button class="btn" onclick="copyTxt('bic-rs')">Copy</button></div>
+      <div>Amount: <strong id="amt-rsd">399 RSD</strong> <button class="btn" onclick="copyVal('399 RSD')">Copy amount</button></div>
+      <div>Payment note: <strong id="msg-rs">Novo Ropstvo — your email</strong> <button class="btn" onclick="copyTxt('msg-rs')">Copy note</button></div>
+    </div>
+
+    <!-- Optional Paysend -->
+    <div class="card" style="margin-top:12px">
+      <h3 style="margin-top:0">Optional: Pay with Paysend (fast & low fee)</h3>
+      <ol>
+        <li>Install <strong>Paysend</strong> and link your local account/card.</li>
+        <li>Choose <strong>bank account</strong> and enter recipient’s <strong>account number</strong>:
+          <br><code>3138469083</code> / <code>0800</code> (Česká spořitelna)</li>
+        <li>Enter <strong>399 RSD</strong> (or select your currency) and note “Novo Ropstvo — your email”.</li>
+        <li>Confirm — money arrives in seconds; fees are low.</li>
+      </ol>
+      <div class="badges">
+        <a href="https://play.google.com/store/apps/details?id=com.paysend.app" target="_blank" rel="noopener">
+          <img src="./images/google-play.png" alt="Get it on Google Play">
+        </a>
+        <a href="https://apps.apple.com/app/id1212616838" target="_blank" rel="noopener">
+          <img src="./images/app-store.png" alt="Download on the App Store">
+        </a>
+      </div>
+      <p class="note">With Paysend you send directly to a <em>bank account</em> (domestic or foreign) — no IBAN input needed; account number + bank is enough.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Other countries — 3.49 EUR (SEPA/IBAN)</h2>
+    <div class="grid">
+      <div>
+        <div class="kvs">
+          <div>Beneficiary: <strong>Marjan Mitrović</strong></div>
+          <div>IBAN: <strong id="iban-eu">CZ5908000000003138469083</strong> <button class="btn" onclick="copyTxt('iban-eu')">Copy IBAN</button></div>
+          <div>SWIFT/BIC: <strong id="bic-eu">GIBACZPX</strong> <button class="btn" onclick="copyTxt('bic-eu')">Copy</button></div>
+          <div>Amount: <strong id="amt-eur">3.49 EUR</strong> <button class="btn" onclick="copyVal('3.49 EUR')">Copy amount</button></div>
+          <div>Payment note: <strong id="msg-eu">Novo Ropstvo — buyer email</strong> <button class="btn" onclick="copyTxt('msg-eu')">Copy note</button></div>
+        </div>
+        <p class="note">SEPA QR below prefills a 3.49 EUR payment.</p>
+      </div>
+      <aside><div id="qr-eur"></div></aside>
+    </div>
+  </section>
 
   <p><a href="./kod.html"><strong>Already paid? Enter your code →</strong></a></p>
 </main>
 
-<footer>
-  © 2025 Marjan Mitrović — All rights reserved
-</footer>
+<footer>© 2025 Marjan Mitrović — All rights reserved</footer>
 
+<script src="./js/qrcode.min.js"></script>
 <script>
-function copyTxt(id){
-  const t = document.getElementById(id).textContent.trim();
-  navigator.clipboard.writeText(t).then(()=>alert('✅ Copied: '+t)).catch(()=>alert('❗ Copy failed'));
-}
-document.getElementById('cpyIban').onclick = ()=>copyTxt('iban');
-document.getElementById('cpyBic').onclick  = ()=>copyTxt('bic');
-document.getElementById('cpyAmt').onclick  = ()=>copyTxt('amt');
-document.getElementById('cpyMsg').onclick  = ()=>copyTxt('msg');
+function copyTxt(id){const t=document.getElementById(id).textContent.trim();navigator.clipboard.writeText(t).then(()=>alert('✅ Copied: '+t)).catch(()=>alert('❗ Copy failed'))}
+function copyVal(v){navigator.clipboard.writeText(v).then(()=>alert('✅ Copied: '+v)).catch(()=>alert('❗ Copy failed'))}
+function buildCzQr(iban, amountCzk, message){const p=["SPD*1.0",`ACC:${iban.toUpperCase()}`];if(amountCzk)p.push(`AM:${amountCzk}`);p.push("CC:CZK");if(message)p.push(`MSG:${message.substring(0,60)}`);return p.join("*")}
+new QRCode(document.getElementById('qr-cz'),{text:buildCzQr("CZ5908000000003138469083","99.00","Novo Ropstvo - buyer email"),width:256,height:256,correctLevel:QRCode.CorrectLevel.M});
+function buildEpc(iban,bic,name,amount,remit){const amt=amount?`EUR${amount.toFixed(2)}`:"";return["BCD","001","1","SCT",(bic||"").toUpperCase(),name.substring(0,70),iban.toUpperCase(),amt,"",remit?remit.substring(0,140):""].join("\n")}
+new QRCode(document.getElementById('qr-eur'),{text:buildEpc("CZ5908000000003138469083","GIBACZPX","Marjan Mitrović",3.49,"Novo Ropstvo - buyer email"),width:256,height:256,correctLevel:QRCode.CorrectLevel.M});
 </script>
 </body>
 </html>

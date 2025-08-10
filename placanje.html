@@ -1,25 +1,25 @@
 <!doctype html>
 <html lang="sr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Uplata — Novo Ropstvo</title>
-  <meta name="description" content="Podaci za uplatu knjige Novo Ropstvo (bankovni transfer / Paysend).">
-  <link rel="canonical" href="./placanje.html">
-  <script src="./js/lang-switcher.js" defer></script>
-  <style>
-    :root { --max:860px }
-    *{box-sizing:border-box} body{margin:0;background:#0b0f12;color:#e8e8e8;font:16px/1.5 system-ui,Segoe UI,Roboto,Arial,sans-serif}
-    a{color:#cde3ff} .wrap{max-width:var(--max);margin:0 auto;padding:24px}
-    h1{margin:8px 0 4px;font-size:clamp(22px,3vw,32px)} h2{margin:24px 0 8px}
-    .card{background:#10161c;border:1px solid #1f2a33;border-radius:14px;padding:16px;margin:12px 0}
-    .grid{display:grid;gap:16px} @media(min-width:720px){.grid{grid-template-columns:1.1fr .9fr}}
-    .kvs div{display:flex;align-items:center;gap:8px;margin:6px 0}
-    .btn{padding:10px 14px;border:1px solid #2a3945;border-radius:10px;background:#0f1419;color:#e8e8e8;cursor:pointer}
-    .note{opacity:.8;font-size:14px} img{max-width:100%;height:auto;border-radius:12px;border:1px solid #1f2a33}
-    nav a{margin-right:14px;opacity:.9;text-decoration:none} nav a:hover{opacity:1;text-decoration:underline}
-    header,footer{max-width:var(--max);margin:0 auto;padding:16px}
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Uplata — Novo Ropstvo</title>
+<meta name="description" content="Uplata iz Češke (99 CZK), iz Srbije (399 RSD) i iz ostalih zemalja (3.49 EUR).">
+<link rel="canonical" href="./placanje.html">
+<script src="./js/lang-switcher.js" defer></script>
+<style>
+:root{--max:860px}*{box-sizing:border-box}body{margin:0;background:#0b0f12;color:#e8e8e8;font:16px/1.5 system-ui,Segoe UI,Roboto,Arial,sans-serif}
+a{color:#cde3ff}.wrap{max-width:var(--max);margin:0 auto;padding:24px}
+h1{margin:8px 0 4px;font-size:clamp(22px,3vw,32px)}h2{margin:24px 0 8px}
+.card{background:#10161c;border:1px solid #1f2a33;border-radius:14px;padding:16px;margin:12px 0}
+.grid{display:grid;gap:16px}@media(min-width:900px){.grid{grid-template-columns:1fr 1fr}}
+.kvs div{display:flex;align-items:center;gap:8px;margin:6px 0}
+.btn{padding:10px 14px;border:1px solid #2a3945;border-radius:10px;background:#0f1419;color:#e8e8e8;cursor:pointer}
+.note{opacity:.8;font-size:14px}#qr-cz,#qr-eur{display:grid;place-items:center;min-height:256px}
+.badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.badges a img{height:40px;border-radius:8px;border:1px solid #1f2a33}
+nav a{margin-right:14px;opacity:.9;text-decoration:none}nav a:hover{opacity:1;text-decoration:underline}
+header,footer{max-width:var(--max);margin:0 auto;padding:16px}
+</style>
 </head>
 <body>
 <header>
@@ -32,55 +32,93 @@
 
 <main class="wrap">
   <h1>Uplata knjige</h1>
-  <p class="note">Cena: <strong><span id="amount">399 RSD</span></strong> (jednokratno). Nakon uplate, unesite kod i preuzmite EPUB.</p>
+  <p class="note">Nakon uplate unesite kod i preuzmite EPUB: <a href="./kod.html"><strong>Unesi kod →</strong></a></p>
 
-  <div class="grid">
-    <section class="card">
-      <h2>Bankovni transfer (IBAN)</h2>
-      <div class="kvs">
-        <div>Primalac: <strong><span id="accname">ACCOUNT_NAME_HERE</span></strong></div>
-        <div>IBAN: <strong><span id="iban">IBAN_HERE</span></strong> <button class="btn" id="cpyIban">Kopiraj IBAN</button></div>
-        <div>SWIFT/BIC: <strong><span id="bic">BIC_SWIFT_HERE</span></strong> <button class="btn" id="cpyBic">Kopiraj</button></div>
-        <div>Iznos: <strong><span id="iznos">399 RSD</span></strong> <button class="btn" id="cpyAmt">Kopiraj iznos</button></div>
-        <div>Svrha/Opis: <strong><span id="msg">Novo Ropstvo – email kupca</span></strong> <button class="btn" id="cpyMsg">Kopiraj opis</button></div>
-      </div>
-      <p class="note">💡 Preporuka: u „Svrha/Opis“ upišite svoj email radi izdavanja koda.</p>
-    </section>
-
-    <aside class="card">
-      <h2>QR za uplatu (informativni)</h2>
-      <img src="./images/barkod.png" alt="QR za uplatu (informacije o računu)">
-      <p class="note">Ovaj QR prikazuje podatke (ime i broj računa). Neke banke neće otvoriti nalog automatski. Po potrebi ručno kopirajte IBAN/iznos.</p>
-    </aside>
-  </div>
-
+  <!-- CZ -->
   <section class="card">
-    <h2>Paysend (RSD → isti IBAN)</h2>
-    <ol>
-      <li>Otvorite aplikaciju <strong>Paysend</strong> (ili instalirajte),</li>
-      <li>Izaberite slanje u <strong>RSD</strong> na <strong>IBAN</strong> (<em>isti gore naveden</em>),</li>
-      <li>Unesite iznos <strong>399 RSD</strong> i opis „Novo Ropstvo – vaš email“,</li>
-      <li>Potvrdite uplatu (konverzija u CZK se vrši automatski).</li>
-    </ol>
-    <p class="note">Napomena: Sve tri jezičke verzije koriste isti IBAN; razlikuju se samo valuta/opis.</p>
+    <h2>Češka republika — 99 CZK (CZ QR Platba)</h2>
+    <div class="grid">
+      <div>
+        <div class="kvs">
+          <div>Primalac: <strong>Marjan Mitrović</strong></div>
+          <div>Račun: <strong>3138469083/0800</strong></div>
+          <div>IBAN: <strong id="iban-cz">CZ5908000000003138469083</strong> <button class="btn" onclick="copyTxt('iban-cz')">Kopiraj IBAN</button></div>
+          <div>SWIFT/BIC: <strong id="bic-cz">GIBACZPX</strong> <button class="btn" onclick="copyTxt('bic-cz')">Kopiraj</button></div>
+          <div>Iznos: <strong id="amt-czk">99.00 CZK</strong> <button class="btn" onclick="copyVal('99.00 CZK')">Kopiraj iznos</button></div>
+          <div>Svrha/Opis: <strong id="msg-cz">Novo Ropstvo – email kupca</strong> <button class="btn" onclick="copyTxt('msg-cz')">Kopiraj opis</button></div>
+        </div>
+        <p class="note">Skener vaše banke treba da prepozna QR i popuni nalog za 99 CZK.</p>
+      </div>
+      <aside><div id="qr-cz"></div></aside>
+    </div>
+  </section>
+
+  <!-- RS -->
+  <section class="card">
+    <h2>Srbija — 399 RSD (preko IBAN ili Paysend)</h2>
+    <div class="kvs">
+      <div>Primalac: <strong>Marjan Mitrović</strong></div>
+      <div>IBAN: <strong id="iban-rs">CZ5908000000003138469083</strong> <button class="btn" onclick="copyTxt('iban-rs')">Kopiraj IBAN</button></div>
+      <div>SWIFT/BIC: <strong id="bic-rs">GIBACZPX</strong> <button class="btn" onclick="copyTxt('bic-rs')">Kopiraj</button></div>
+      <div>Iznos: <strong id="amt-rsd">399 RSD</strong> <button class="btn" onclick="copyVal('399 RSD')">Kopiraj iznos</button></div>
+      <div>Svrha/Opis: <strong id="msg-rs">Novo Ropstvo – vaš email</strong> <button class="btn" onclick="copyTxt('msg-rs')">Kopiraj opis</button></div>
+    </div>
+
+    <!-- Paysend blok -->
+    <div class="card" style="margin-top:12px">
+      <h3 style="margin-top:0">Plaćanje preko Paysend aplikacije</h3>
+      <ol>
+        <li>Instalirajte <strong>Paysend</strong> i povežite svoj lokalni račun/karticu.</li>
+        <li>Izaberite <strong>slanje na bankovni račun</strong> i unesite <strong>broj računa primaoca</strong>:
+          <br> <code>3138469083</code> / <code>0800</code> (Češka spořitelna)</li>
+        <li>Unesite iznos <strong>399 RSD</strong> (ili izaberite željenu valutu) i opis „Novo Ropstvo – vaš email“.</li>
+        <li>Potvrdite — uplata stiže za par sekundi, provizije su niske.</li>
+      </ol>
+      <div class="badges">
+        <a href="https://play.google.com/store/apps/details?id=com.paysend.app" target="_blank" rel="noopener">
+          <img src="./images/google-play.png" alt="Preuzmi na Google Play">
+        </a>
+        <a href="https://apps.apple.com/app/id1212616838" target="_blank" rel="noopener">
+          <img src="./images/app-store.png" alt="Preuzmi na App Store">
+        </a>
+      </div>
+      <p class="note">Napomena: U Paysend‑u uplata ide direktno na <em>račun</em> (strani ili domaći) — bez potrebe za unosom IBAN‑a; dovoljno je uneti broj računa i banku.</p>
+    </div>
+  </section>
+
+  <!-- OTHERS -->
+  <section class="card">
+    <h2>Ostale zemlje — 3.49 EUR (SEPA/IBAN)</h2>
+    <div class="grid">
+      <div>
+        <div class="kvs">
+          <div>Beneficiar: <strong>Marjan Mitrović</strong></div>
+          <div>IBAN: <strong id="iban-eu">CZ5908000000003138469083</strong> <button class="btn" onclick="copyTxt('iban-eu')">Kopiraj IBAN</button></div>
+          <div>SWIFT/BIC: <strong id="bic-eu">GIBACZPX</strong> <button class="btn" onclick="copyTxt('bic-eu')">Kopiraj</button></div>
+          <div>Iznos: <strong id="amt-eur">3.49 EUR</strong> <button class="btn" onclick="copyVal('3.49 EUR')">Kopiraj iznos</button></div>
+          <div>Payment note: <strong id="msg-eu">Novo Ropstvo — buyer email</strong> <button class="btn" onclick="copyTxt('msg-eu')">Kopiraj napomenu</button></div>
+        </div>
+        <p class="note">SEPA QR ispod popunjava nalog sa 3.49 EUR.</p>
+      </div>
+      <aside><div id="qr-eur"></div></aside>
+    </div>
   </section>
 
   <p><a href="./kod.html"><strong>Već si uplatio? Unesi kod →</strong></a></p>
 </main>
 
-<footer>
-  © 2025 Marjan Mitrović — Sva prava zadržana
-</footer>
+<footer>© 2025 Marjan Mitrović — Sva prava zadržana</footer>
 
+<script src="./js/qrcode.min.js"></script>
 <script>
-function copyTxt(id){
-  const t = document.getElementById(id).textContent.trim();
-  navigator.clipboard.writeText(t).then(()=>alert('✅ Kopirano: '+t)).catch(()=>alert('❗ Kopiranje neuspešno'));
-}
-document.getElementById('cpyIban').onclick = ()=>copyTxt('iban');
-document.getElementById('cpyBic').onclick  = ()=>copyTxt('bic');
-document.getElementById('cpyAmt').onclick  = ()=>copyTxt('iznos');
-document.getElementById('cpyMsg').onclick  = ()=>copyTxt('msg');
+function copyTxt(id){const t=document.getElementById(id).textContent.trim();navigator.clipboard.writeText(t).then(()=>alert('✅ Kopirano: '+t)).catch(()=>alert('❗ Kopiranje neuspešno'))}
+function copyVal(v){navigator.clipboard.writeText(v).then(()=>alert('✅ Kopirano: '+v)).catch(()=>alert('❗ Kopiranje neuspešno'))}
+
+function buildCzQr(iban, amountCzk, message){const p=["SPD*1.0",`ACC:${iban.toUpperCase()}`];if(amountCzk)p.push(`AM:${amountCzk}`);p.push("CC:CZK");if(message)p.push(`MSG:${message.substring(0,60)}`);return p.join("*")}
+new QRCode(document.getElementById('qr-cz'),{text:buildCzQr("CZ5908000000003138469083","99.00","Novo Ropstvo - email kupca"),width:256,height:256,correctLevel:QRCode.CorrectLevel.M});
+
+function buildEpc(iban,bic,name,amount,remit){const amt=amount?`EUR${amount.toFixed(2)}`:"";return["BCD","001","1","SCT",(bic||"").toUpperCase(),name.substring(0,70),iban.toUpperCase(),amt,"",remit?remit.substring(0,140):""].join("\n")}
+new QRCode(document.getElementById('qr-eur'),{text:buildEpc("CZ5908000000003138469083","GIBACZPX","Marjan Mitrović",3.49,"Novo Ropstvo - buyer email"),width:256,height:256,correctLevel:QRCode.CorrectLevel.M});
 </script>
 </body>
 </html>
