@@ -1,229 +1,197 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-<script src="./js/lang-switcher.js" defer></script>
+  <script src="./js/lang-switcher.js" defer></script>
+  <meta charset="utf-8"/>
+  <meta property="og:title" content="Galerie — Novo Ropstvo">
+  <meta property="og:description" content="Fotky a vizuály z knihy.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://novo-ropstvo.github.io/novo-ropstvo/galerija_cz.html">
+  <meta property="og:image" content="https://novo-ropstvo.github.io/novo-ropstvo/images/cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Galerie knihy</title>
 
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Galerie knihy</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet"/>
-    <style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet"/>
+
+  <style>
     .lang-switch {
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        z-index: 999;
-        background: #fff;
-        padding: 6px 12px;
-        border-radius: 8px;
-        box-shadow: 0 0 6px rgba(0,0,0,0.2);
+      position: fixed; top: 10px; right: 10px; z-index: 999;
+      background: #fff; padding: 6px 12px; border-radius: 8px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.2);
     }
-    .lang-switch a {
-        margin: 0 5px;
-        text-decoration: none;
-        font-size: 1.2rem;
-    }
-    </style>
+    .lang-switch a { margin: 0 5px; text-decoration: none; font-size: 1.2rem; }
+  </style>
 </head>
 <body>
-<div class="top-nav">
+  <div class="top-nav">
     <a href="index_cz.html">Domů</a>
     <a href="galerija_cz.html">Galerie</a>
     <a href="placanje_cz.html">Platba</a>
     <div class="lang-switch">
-        <a href="index.html">🇷🇸</a>
-        <a href="index_en.html">🇬🇧</a>
-        <a href="index_cz.html">🇨🇿</a>
+      <a href="index.html">🇷🇸</a>
+      <a href="index_en.html">🇬🇧</a>
+      <a href="index_cz.html">🇨🇿</a>
     </div>
-</div>
+  </div>
 
-<div class="container py-5">
+  <div class="container py-5">
     <h1 class="mb-4 text-center">Galerie knihy</h1>
     <div class="row">
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica1.png" data-lightbox="galerija" data-title="Galerie knihy - Skica 1">
-                <img src="images/skica1.png" alt="Skica 1" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica2.png" data-lightbox="galerija" data-title="Galerie knihy - Skica 2">
-                <img src="images/skica2.png" alt="Skica 2" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica3.png" data-lightbox="galerija" data-title="Galerie knihy - Skica 3">
-                <img src="images/skica3.png" alt="Skica 3" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica4.png" data-lightbox="galerija" data-title="Galerie knihy - Skica 4">
-                <img src="images/skica4.png" alt="Skica 4" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica5.png" data-lightbox="galerija" data-title="Galerie knihy - Skica 5">
-                <img src="images/skica5.png" alt="Skica 5" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica6.png" data-lightbox="galerija" data-title="Galerie knihy - Skica 6">
-                <img src="images/skica6.png" alt="Skica 6" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica7.png" data-lightbox="galerija" data-title="Galerie knihy - Skica 7">
-                <img src="images/skica7.png" alt="Skica 7" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica8.png" data-lightbox="galerija" data-title="Galerie knihy - Skica 8">
-                <img src="images/skica8.png" alt="Skica 8" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica9.png" data-lightbox="galerija" data-title="Galerie knihy - Skica 9">
-                <img src="images/skica9.png" alt="Skica 9" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica10.png" data-lightbox="galerija" data-title="Galerie knihy - Skica 10">
-                <img src="images/skica10.png" alt="Skica 10" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica11.png" data-lightbox="galerija" data-title="Galerie knihy - Skica 11">
-                <img src="images/skica11.png" alt="Skica 11" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica12.png" data-lightbox="galerija" data-title="Galerie knihy - Skica 12">
-                <img src="images/skica12.png" alt="Skica 12" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica13.png" data-lightbox="galerija" data-title="Galerie knihy - Skica 13">
-                <img src="images/skica13.png" alt="Skica 13" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica14.png" data-lightbox="galerija" data-title="Galerie knihy - Skica 14">
-                <img src="images/skica14.png" alt="Skica 14" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica15.png" data-lightbox="galerija" data-title="Galerie knihy - Skica 15">
-                <img src="images/skica15.png" alt="Skica 15" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica16.png" data-lightbox="galerija" data-title="Galerie knihy - Skica 16">
-                <img src="images/skica16.png" alt="Skica 16" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica17.png" data-lightbox="galerija" data-title="Galerie knihy - Skica 17">
-                <img src="images/skica17.png" alt="Skica 17" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica18.png" data-lightbox="galerija" data-title="Galerie knihy - Skica 18">
-                <img src="images/skica18.png" alt="Skica 18" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica19.png" data-lightbox="galerija" data-title="Galerie knihy - Skica 19">
-                <img src="images/skica19.png" alt="Skica 19" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica20.png" data-lightbox="galerija" data-title="Galerie knihy - Skica 20">
-                <img src="images/skica20.png" alt="Skica 20" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica21.png" data-lightbox="galerija" data-title="Galerie knihy - Skica 21">
-                <img src="images/skica21.png" alt="Skica 21" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica22.png" data-lightbox="galerija" data-title="Galerie knihy - Skica 22">
-                <img src="images/skica22.png" alt="Skica 22" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica23.png" data-lightbox="galerija" data-title="Galerie knihy - Skica 23">
-                <img src="images/skica23.png" alt="Skica 23" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica24.png" data-lightbox="galerija" data-title="Galerie knihy - Skica 24">
-                <img src="images/skica24.png" alt="Skica 24" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica25.png" data-lightbox="galerija" data-title="Galerie knihy - Skica 25">
-                <img src="images/skica25.png" alt="Skica 25" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica26.png" data-lightbox="galerija" data-title="Galerie knihy - Skica 26">
-                <img src="images/skica26.png" alt="Skica 26" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica27.png" data-lightbox="galerija" data-title="Galerie knihy - Skica 27">
-                <img src="images/skica27.png" alt="Skica 27" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica28.png" data-lightbox="galerija" data-title="Galerie knihy - Skica 28">
-                <img src="images/skica28.png" alt="Skica 28" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica29.png" data-lightbox="galerija" data-title="Galerie knihy - Skica 29">
-                <img src="images/skica29.png" alt="Skica 29" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-            <a href="images/skica30.png" data-lightbox="galerija" data-title="Galerie knihy - Skica 30">
-                <img src="images/skica30.png" alt="Skica 30" class="img-fluid rounded shadow-sm" />
-            </a>
-        </div>
-        
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <a href="images/skica1.png" data-lightbox="gallery" data-title="Galerie knihy - Skica 1">
+          <img src="images/skica1.png" alt="Skica 1" class="img-fluid rounded shadow-sm"/>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <a href="images/skica2.png" data-lightbox="gallery" data-title="Galerie knihy - Skica 2">
+          <img src="images/skica2.png" alt="Skica 2" class="img-fluid rounded shadow-sm"/>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <a href="images/skica3.png" data-lightbox="gallery" data-title="Galerie knihy - Skica 3">
+          <img src="images/skica3.png" alt="Skica 3" class="img-fluid rounded shadow-sm"/>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <a href="images/skica4.png" data-lightbox="gallery" data-title="Galerie knihy - Skica 4">
+          <img src="images/skica4.png" alt="Skica 4" class="img-fluid rounded shadow-sm"/>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <a href="images/skica5.png" data-lightbox="gallery" data-title="Galerie knihy - Skica 5">
+          <img src="images/skica5.png" alt="Skica 5" class="img-fluid rounded shadow-sm"/>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <a href="images/skica6.png" data-lightbox="gallery" data-title="Galerie knihy - Skica 6">
+          <img src="images/skica6.png" alt="Skica 6" class="img-fluid rounded shadow-sm"/>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <a href="images/skica7.png" data-lightbox="gallery" data-title="Galerie knihy - Skica 7">
+          <img src="images/skica7.png" alt="Skica 7" class="img-fluid rounded shadow-sm"/>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <a href="images/skica8.png" data-lightbox="gallery" data-title="Galerie knihy - Skica 8">
+          <img src="images/skica8.png" alt="Skica 8" class="img-fluid rounded shadow-sm"/>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <a href="images/skica9.png" data-lightbox="gallery" data-title="Galerie knihy - Skica 9">
+          <img src="images/skica9.png" alt="Skica 9" class="img-fluid rounded shadow-sm"/>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <a href="images/skica10.png" data-lightbox="gallery" data-title="Galerie knihy - Skica 10">
+          <img src="images/skica10.png" alt="Skica 10" class="img-fluid rounded shadow-sm"/>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <a href="images/skica11.png" data-lightbox="gallery" data-title="Galerie knihy - Skica 11">
+          <img src="images/skica11.png" alt="Skica 11" class="img-fluid rounded shadow-sm"/>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <a href="images/skica12.png" data-lightbox="gallery" data-title="Galerie knihy - Skica 12">
+          <img src="images/skica12.png" alt="Skica 12" class="img-fluid rounded shadow-sm"/>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <a href="images/skica13.png" data-lightbox="gallery" data-title="Galerie knihy - Skica 13">
+          <img src="images/skica13.png" alt="Skica 13" class="img-fluid rounded shadow-sm"/>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <a href="images/skica14.png" data-lightbox="gallery" data-title="Galerie knihy - Skica 14">
+          <img src="images/skica14.png" alt="Skica 14" class="img-fluid rounded shadow-sm"/>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <a href="images/skica15.png" data-lightbox="gallery" data-title="Galerie knihy - Skica 15">
+          <img src="images/skica15.png" alt="Skica 15" class="img-fluid rounded shadow-sm"/>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <a href="images/skica16.png" data-lightbox="gallery" data-title="Galerie knihy - Skica 16">
+          <img src="images/skica16.png" alt="Skica 16" class="img-fluid rounded shadow-sm"/>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <a href="images/skica17.png" data-lightbox="gallery" data-title="Galerie knihy - Skica 17">
+          <img src="images/skica17.png" alt="Skica 17" class="img-fluid rounded shadow-sm"/>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <a href="images/skica18.png" data-lightbox="gallery" data-title="Galerie knihy - Skica 18">
+          <img src="images/skica18.png" alt="Skica 18" class="img-fluid rounded shadow-sm"/>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <a href="images/skica19.png" data-lightbox="gallery" data-title="Galerie knihy - Skica 19">
+          <img src="images/skica19.png" alt="Skica 19" class="img-fluid rounded shadow-sm"/>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <a href="images/skica20.png" data-lightbox="gallery" data-title="Galerie knihy - Skica 20">
+          <img src="images/skica20.png" alt="Skica 20" class="img-fluid rounded shadow-sm"/>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <a href="images/skica21.png" data-lightbox="gallery" data-title="Galerie knihy - Skica 21">
+          <img src="images/skica21.png" alt="Skica 21" class="img-fluid rounded shadow-sm"/>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <a href="images/skica22.png" data-lightbox="gallery" data-title="Galerie knihy - Skica 22">
+          <img src="images/skica22.png" alt="Skica 22" class="img-fluid rounded shadow-sm"/>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <a href="images/skica23.png" data-lightbox="gallery" data-title="Galerie knihy - Skica 23">
+          <img src="images/skica23.png" alt="Skica 23" class="img-fluid rounded shadow-sm"/>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <a href="images/skica24.png" data-lightbox="gallery" data-title="Galerie knihy - Skica 24">
+          <img src="images/skica24.png" alt="Skica 24" class="img-fluid rounded shadow-sm"/>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <a href="images/skica25.png" data-lightbox="gallery" data-title="Galerie knihy - Skica 25">
+          <img src="images/skica25.png" alt="Skica 25" class="img-fluid rounded shadow-sm"/>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <a href="images/skica26.png" data-lightbox="gallery" data-title="Galerie knihy - Skica 26">
+          <img src="images/skica26.png" alt="Skica 26" class="img-fluid rounded shadow-sm"/>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <a href="images/skica27.png" data-lightbox="gallery" data-title="Galerie knihy - Skica 27">
+          <img src="images/skica27.png" alt="Skica 27" class="img-fluid rounded shadow-sm"/>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <a href="images/skica28.png" data-lightbox="gallery" data-title="Galerie knihy - Skica 28">
+          <img src="images/skica28.png" alt="Skica 28" class="img-fluid rounded shadow-sm"/>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <a href="images/skica29.png" data-lightbox="gallery" data-title="Galerie knihy - Skica 29">
+          <img src="images/skica29.png" alt="Skica 29" class="img-fluid rounded shadow-sm"/>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <a href="images/skica30.png" data-lightbox="gallery" data-title="Galerie knihy - Skica 30">
+          <img src="images/skica30.png" alt="Skica 30" class="img-fluid rounded shadow-sm"/>
+        </a>
+      </div>
     </div>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 </body>
 </html>
