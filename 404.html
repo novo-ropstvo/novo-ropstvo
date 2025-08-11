@@ -1,23 +1,48 @@
-<!-- 404.html -->
 <!doctype html>
 <html lang="sr">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Stranica nije pronađena</title>
-<meta name="robots" content="noindex">
+<title>Stranica nije pronađena — Novo Ropstvo</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#0b0f12;color:#e8e8e8;font:16px/1.5 system-ui,Segoe UI,Roboto,Arial}
-.wrap{max-width:720px;margin:0 auto;padding:24px;text-align:center}
-a{color:#cde3ff}
-h1{margin:16px 0 8px}
+:root{--max:760px}*{box-sizing:border-box}body{margin:0;background:#0b0f12;color:#e8e8e8;font:16px/1.5 system-ui,Segoe UI,Roboto,Arial}
+.wrap{max-width:var(--max);margin:0 auto;padding:32px}
+h1{font-size:clamp(24px,3.5vw,36px);margin:0 0 8px}
 p{opacity:.9}
+a{color:#cde3ff;text-decoration:none}
+.card{background:#10161c;border:1px solid #1f2a33;border-radius:14px;padding:20px;margin-top:16px}
+.grid{display:grid;gap:12px}@media(min-width:700px){.grid{grid-template-columns:1fr 1fr 1fr}}
+.link{display:block;padding:12px 14px;border-radius:10px;background:#11161c;border:1px solid #2a3945}
+.link:hover{background:#16202a}
+small{opacity:.8}
 </style>
 </head>
 <body>
-<main class="wrap">
-  <h1>404 — Stranica nije pronađena</h1>
-  <p>Vratite se na <a href="./index.html">početnu</a> ili izaberite jezik:</p>
-  <p><a href="./index.html">SR</a> · <a href="./index_en.html">EN</a> · <a href="./index_cz.html">CZ</a></p>
-</main>
+  <main class="wrap">
+    <h1>404 — Stranica nije pronađena</h1>
+    <p>Link je možda promenjen ili obrisan. Izaberi verziju sajta ispod:</p>
+
+    <div class="card">
+      <div class="grid">
+        <a class="link" href="./index.html"><strong>Početna (SR)</strong><br><small>Srpski jezik</small></a>
+        <a class="link" href="./index_en.html"><strong>Home (EN)</strong><br><small>English</small></a>
+        <a class="link" href="./index_cz.html"><strong>Domů (CZ)</strong><br><small>Česky</small></a>
+      </div>
+    </div>
+
+    <div class="card">
+      <p><strong>Brzi linkovi</strong></p>
+      <div class="grid">
+        <a class="link" href="./placanje.html">Uplata (SR)</a>
+        <a class="link" href="./placanje_en.html">Payment (EN)</a>
+        <a class="link" href="./placanje_cz.html">Platba (CZ)</a>
+        <a class="link" href="./kod.html">Kod (SR)</a>
+        <a class="link" href="./kod_en.html">Code (EN)</a>
+        <a class="link" href="./kod_cz.html">Kód (CZ)</a>
+        <a class="link" href="./kontakt.html">Kontakt (SR)</a>
+        <a class="link" href="./kontakt_en.html">Contact (EN)</a>
+        <a class="link" href="./kontakt_cz.html">Kontakt (CZ)</a>
+      </div>
+    </div>
+  </main>
 </body>
 </html>
