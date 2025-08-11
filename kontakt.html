@@ -1,3 +1,4 @@
+<!-- kontakt.html (SR) -->
 <!doctype html>
 <html lang="sr">
 <head>
@@ -12,7 +13,9 @@
 <title>Kontakt — Novo Ropstvo</title>
 <meta name="description" content="Kontaktirajte autora knjige Novo Ropstvo.">
 <link rel="canonical" href="./kontakt.html">
-<script src="./js/lang-switcher.js" defer></script>
+<link rel="alternate" hreflang="en" href="./kontakt_en.html">
+<link rel="alternate" hreflang="cs" href="./kontakt_cz.html">
+<script src="./js/lang-switcher.js?v=3" defer></script>
 <style>
 :root{--max:720px}*{box-sizing:border-box}body{margin:0;background:#0b0f12;color:#e8e8e8;font:16px/1.5 system-ui,Segoe UI,Roboto,Arial,sans-serif}
 .wrap{max-width:var(--max);margin:0 auto;padding:24px}
@@ -39,14 +42,11 @@ header,footer{max-width:var(--max);margin:0 auto;padding:16px}
     <a href="./kontakt.html" aria-current="page">Kontakt</a>
   </nav>
 
-  <!-- Jezički preklopnik -->
   <nav style="position:fixed;top:12px;right:16px;display:flex;gap:10px;font-size:14px">
     <a href="#" data-lang="sr" title="Srpski">SR</a>
     <a href="#" data-lang="en" title="English">EN</a>
     <a href="#" data-lang="cz" title="Česky">CZ</a>
   </nav>
-  <script src="./js/lang-switcher.js?v=3" defer></script>
-
 </header>
 
 <main class="wrap">
@@ -66,7 +66,6 @@ header,footer{max-width:var(--max);margin:0 auto;padding:16px}
       <label>Poruka</label>
       <textarea name="message" placeholder="Napišite poruku…" required></textarea>
 
-      <!-- Honeypot -->
       <input class="hp" name="_gotcha" tabindex="-1" autocomplete="off">
 
       <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
@@ -82,48 +81,36 @@ header,footer{max-width:var(--max);margin:0 auto;padding:16px}
 <footer>© 2025 Marjan Mitrović — Sva prava zadržana</footer>
 
 <script>
-// ——— KONFIG ———
 window.FORMSPREE_URL = "https://formspree.io/f/xyzpljrg";
 
 const f = document.getElementById('contactForm');
 const m = document.getElementById('msg');
 const mailto = document.getElementById('mailto');
 
-// mailto fallback
-function setMailto() {
-  const data = new FormData(f);
-  const from = (data.get('email')||'').trim();
-  const name = (data.get('name')||'').trim();
-  const body = (data.get('message')||'').trim();
-  const subj = encodeURIComponent("Poruka sa sajta — Novo Ropstvo");
-  const txt  = encodeURIComponent(`Ime: ${name}\nEmail: ${from}\n\n${body}`);
-  mailto.href = `mailto:marjan.posao@gmail.com?subject=${subj}&body=${txt}`;
+function setMailto(){
+  const d=new FormData(f);
+  const from=(d.get('email')||'').trim();
+  const name=(d.get('name')||'').trim();
+  const body=(d.get('message')||'').trim();
+  const subj=encodeURIComponent("Poruka sa sajta — Novo Ropstvo");
+  const txt =encodeURIComponent(`Ime: ${name}\nEmail: ${from}\n\n${body}`);
+  mailto.href=`mailto:marjan.posao@gmail.com?subject=${subj}&body=${txt}`;
 }
-['input','change'].forEach(ev=>f.addEventListener(ev,setMailto));
-setMailto();
+['input','change'].forEach(ev=>f.addEventListener(ev,setMailto)); setMailto();
 
-f.addEventListener('submit', async (e) => {
+f.addEventListener('submit', async (e)=>{
   e.preventDefault();
-  m.textContent = "⏳ Slanje…";
-  const data = new FormData(f);
-  if (data.get('_gotcha')) { m.textContent = "❌ Greška."; return; }
-
-  const endpoint = (window.FORMSPREE_URL || "").trim();
-  if (!endpoint) { m.textContent = "✉️ Formspree još nije povezan. Koristite link iznad."; return; }
-
-  try {
-    const r = await fetch(endpoint, { method:"POST", body:data, headers:{ "Accept":"application/json" }});
-    if (r.ok) { m.textContent = "✅ Poruka poslata. Hvala!"; f.reset(); setMailto(); }
-    else {
-      const t = await r.json().catch(()=>({}));
-      m.textContent = t?.error || "❌ Slanje neuspešno. Pokušajte kasnije.";
-    }
-  } catch(_) {
-    m.textContent = "❌ Mrežna greška. Pokušajte ponovo.";
-  }
+  m.textContent="⏳ Slanje…";
+  const data=new FormData(f);
+  if(data.get('_gotcha')){ m.textContent="❌ Greška."; return; }
+  const endpoint=(window.FORMSPREE_URL||"").trim();
+  if(!endpoint){ m.textContent="✉️ Formspree još nije povezan. Koristite link iznad."; return; }
+  try{
+    const r=await fetch(endpoint,{method:"POST",body:data,headers:{"Accept":"application/json"}});
+    if(r.ok){ m.textContent="✅ Poruka poslata. Hvala!"; f.reset(); setMailto(); }
+    else{ const t=await r.json().catch(()=>({})); m.textContent=t?.error||"❌ Slanje neuspešno. Pokušajte kasnije."; }
+  }catch{ m.textContent="❌ Mrežna greška. Pokušajte ponovo."; }
 });
 </script>
-
-
 </body>
 </html>

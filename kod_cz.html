@@ -1,13 +1,13 @@
-<!-- kod.html (SR) -->
+<!-- kod_cz.html (CZ) -->
 <!doctype html>
-<html lang="sr">
+<html lang="cs">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Preuzimanje — Kod</title>
-<meta name="description" content="Unesi kod i preuzmi EPUB izdanje Novo Ropstvo.">
-<link rel="canonical" href="./kod.html">
+<title>Stažení — Kód</title>
+<meta name="description" content="Zadejte kód a stáhněte si EPUB vydání Novo Ropstvo.">
+<link rel="canonical" href="./kod_cz.html">
+<link rel="alternate" hreflang="sr" href="./kod.html">
 <link rel="alternate" hreflang="en" href="./kod_en.html">
-<link rel="alternate" hreflang="cs" href="./kod_cz.html">
 <style>
 :root{--max:720px}*{box-sizing:border-box}body{margin:0;background:#0b0f12;color:#e8e8e8;font:16px/1.5 system-ui,Segoe UI,Roboto,Arial}
 .wrap{max-width:var(--max);margin:0 auto;padding:24px}a{color:#cde3ff}
@@ -26,10 +26,10 @@ header,footer{max-width:var(--max);margin:0 auto;padding:16px}
 <body>
 <header>
   <nav class="nav">
-    <a href="./index.html">Početna</a>
-    <a href="./galerija.html">Galerija</a>
-    <a href="./placanje.html">Uplata</a>
-    <a href="./kontakt.html">Kontakt</a>
+    <a href="./index_cz.html">Domů</a>
+    <a href="./galerija_cz.html">Galerie</a>
+    <a href="./placanje_cz.html">Platba</a>
+    <a href="./kontakt_cz.html">Kontakt</a>
   </nav>
   <div style="position:fixed;top:12px;right:60px">
     <a href="https://www.facebook.com/share/1HiQt3hzhN/" target="_blank" rel="noopener" aria-label="Facebook">
@@ -45,21 +45,21 @@ header,footer{max-width:var(--max);margin:0 auto;padding:16px}
 </header>
 
 <main class="wrap">
-  <h1>Unesi kod za preuzimanje</h1>
+  <h1>Zadejte kód pro stažení</h1>
   <div class="card">
-    <input id="code" placeholder="Unesi kod (primer: NR-2025-XXXX)" autocomplete="one-time-code" autofocus>
-    <button id="check">Potvrdi kod</button>
+    <input id="code" placeholder="Zadejte kód (např. NR-2025-XXXX)" autocomplete="one-time-code" autofocus>
+    <button id="check">Potvrdit</button>
     <div class="msg" id="msg"></div>
     <div id="dl" style="display:none;margin-top:14px">
-      <a id="epub" href="./downloads/novo-ropstvo.epub" download>⬇️ Preuzmi EPUB</a>
-      <p class="note">Ako se preuzimanje ne pokrene, klikni link iznad desnim klikom → “Save link as…”.</p>
+      <a id="epub" href="./downloads/novo-ropstvo.epub" download>⬇️ Stáhnout EPUB</a>
+      <p class="note">Pokud se stahování nespustí, klikněte pravým → “Uložit odkaz jako…”.</p>
     </div>
-    <a class="cta" href="./dobij-kod.html" target="_blank" rel="noopener">Nemaš kod? Zatraži kod →</a>
+    <a class="cta" href="./dobij-kod.html" target="_blank" rel="noopener">Nemáte kód? Požádejte o kód →</a>
   </div>
-  <p class="note">Kod dobijaš posle uspešne uplate.</p>
+  <p class="note">Kód obdržíte po úspěšné platbě.</p>
 </main>
 
-<footer>© 2025 Marjan Mitrović — Sva prava zadržana</footer>
+<footer>© 2025 Marjan Mitrović — Všechna práva vyhrazena</footer>
 
 <script>
 const ACCESS_CODE = "NR-2025-READ";
@@ -71,14 +71,14 @@ function ok(s){ msg.textContent = "✅ " + s; msg.style.color="#7ee787"; }
 function err(s){ msg.textContent = "❌ " + s; msg.style.color="#ff7b72"; }
 btn.addEventListener('click', ()=>{
   const v = (input.value||"").trim();
-  if (!v) { err("Unesite kod."); return; }
+  if (!v) { err("Zadejte kód."); return; }
   if (v.toUpperCase() === ACCESS_CODE.toUpperCase()) {
-    ok("Kod je ispravan. Preuzimanje je omogućeno.");
+    ok("Kód je platný. Stažení povoleno.");
     dl.style.display = "block";
     try{ localStorage.setItem("nr_access","1"); }catch(_){}
   } else {
     dl.style.display = "none";
-    err("Kod nije ispravan. Proverite i pokušajte ponovo.");
+    err("Neplatný kód. Zkuste to znovu.");
   }
 });
 </script>
