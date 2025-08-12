@@ -19,33 +19,30 @@
   <h1>Unesite kod za preuzimanje</h1>
   <label for="kod">Kod</label>
   <input id="kod" autocomplete="one-time-code" placeholder="npr. ABCD1234"/>
-  <button id="go">Otključaj</button>
+  <button id="go" type="button">Otključaj</button>
   <div id="out" class="msg" hidden></div>
 </div>
 <script>
 const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyv7EARAxNQyerb5NxIifCDMnDa3dzihsarYl8C-6vu2Q2f-6ltEN1urnx8PxykHMiuvA/exec";
 
-const input = document.getElementById('code');
-const btn = document.getElementById('check');
-const msg = document.getElementById('msg');
-const dl  = document.getElementById('dl');
+const input = document.getElementById('kod');
+const btn   = document.getElementById('go');
+const msg   = document.getElementById('out');
 
-function showHtml(html){ msg.innerHTML = html; msg.style.color = ""; }
-function showErr(t){ msg.textContent = "❌ " + t; msg.style.color="#ff7b72"; }
-function showWait(){ msg.textContent = "⏳ Provera koda…"; msg.style.color="#e8e8e8"; }
+function showHtml(html){ msg.innerHTML = html; msg.hidden = false; }
+function showErr(t){ msg.textContent = "❌ " + t; msg.style.color="#ff7b72"; msg.hidden = false; }
+function showWait(){ msg.textContent = "⏳ Provera koda…"; msg.style.color="#e8e8e8"; msg.hidden = false; }
 
 async function verify(){
   const v = (input.value||"").trim();
-  if (!v) { showErr("Unesite kod."); dl.style.display="none"; return; }
+  if (!v) { showErr("Unesite kod."); return; }
   btn.disabled = true; showWait();
   try{
     const res = await fetch(WEB_APP_URL + "?kod=" + encodeURIComponent(v), {mode:"cors"});
     const html = await res.text();
-    showHtml(html);               // Apps Script vraća HTML s linkom za download
-    dl.style.display = "block";   // prikaži download boks
+    showHtml(html); // Apps Script vraća HTML s linkom za download
   }catch(e){
     showErr("Greška u povezivanju. Pokušajte ponovo.");
-    dl.style.display = "none";
   }finally{
     btn.disabled = false;
   }
@@ -54,6 +51,4 @@ async function verify(){
 btn.addEventListener('click', verify);
 input.addEventListener('keydown', e => { if(e.key==='Enter') verify(); });
 </script>
-
-
 </html>
