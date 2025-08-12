@@ -37,17 +37,12 @@ async function verify(ev){
   if (ev && ev.preventDefault) ev.preventDefault();
   const v = (input.value||"").trim();
   if (!v) { showErr("Unesite kod."); return; }
-  btn.disabled = true; showWait();
-  try{
-    const res  = await fetch(WEB_APP_URL + "?kod=" + encodeURIComponent(v));
-    const html = await res.text();
-    showHtml(html);  // Apps Script vraća gotov HTML s linkom za download
-  }catch(e){
-    showErr("Greška u povezivanju. Pokušajte ponovo.");
-  }finally{
-    btn.disabled = false;
-  }
+  // Umesto fetch → direktan odlazak na Apps Script stranu:
+ window.open(WEB_APP_URL + "?kod=" + encodeURIComponent(v), "_blank");
+
 }
+
+
 
 btn.addEventListener('click', verify);
 input.addEventListener('keydown', e => { if(e.key==='Enter') verify(e); });
