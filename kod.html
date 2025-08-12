@@ -29,7 +29,7 @@ const input = document.getElementById('kod');
 const btn   = document.getElementById('go');
 const msg   = document.getElementById('out');
 
-function showHtml(html){ msg.innerHTML = html; msg.hidden = false; }
+function showHtml(html){ msg.innerHTML = html; msg.hidden = false; msg.style.color=""; }
 function showErr(t){ msg.textContent = "❌ " + t; msg.style.color="#ff7b72"; msg.hidden = false; }
 function showWait(){ msg.textContent = "⏳ Provera koda…"; msg.style.color="#e8e8e8"; msg.hidden = false; }
 
@@ -37,23 +37,19 @@ async function verify(ev){
   if (ev && ev.preventDefault) ev.preventDefault();
   const v = (input.value||"").trim();
   if (!v) { showErr("Unesite kod."); return; }
-
   btn.disabled = true; showWait();
   try{
-    const url = WEB_APP_URL + "?kod=" + encodeURIComponent(v) + "&_=" + Date.now(); // no-cache
-    const res  = await fetch(url, { redirect: "follow", cache: "no-store" }); // uklonjen 'mode:"cors"'
-    if (!res.ok) {
-      showErr("Server vraća " + res.status + " — probaj ponovo.");
-      return;
-    }
+    const res  = await fetch(WEB_APP_URL + "?kod=" + encodeURIComponent(v));
     const html = await res.text();
-    showHtml(html);
+    showHtml(html);  // Apps Script vraća gotov HTML s linkom za download
   }catch(e){
-    showErr("Mrežna greška: " + (e?.message || e));
+    showErr("Greška u povezivanju. Pokušajte ponovo.");
   }finally{
     btn.disabled = false;
   }
 }
-</script>
 
+btn.addEventListener('click', verify);
+input.addEventListener('keydown', e => { if(e.key==='Enter') verify(e); });
+</script>
 </html>
