@@ -89,30 +89,75 @@ File: placanje.html (SR)
     <p class="foot">Treba pomoć? Pišite: <a href="mailto:marjan.posao@gmail.com">marjan.posao@gmail.com</a></p>
   </div>
 
-  <script>
-    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyTJ-RhFdeDPCglmsq3u6Igb_euQmmZN0Z_YzRzlBQ2XMjc1Or795BUnOxfzEzmRHa2UA/exec;
-    // pribavi IP za log (opciono)
-    let clientIP = "";
-    (async ()=>{ try{ const r=await fetch('https://api.ipify.org?format=json'); const j=await r.json(); clientIP=j.ip||""; }catch(_){/*ignore*/} })();
+ <script>
+  // ostavi svoj postojeći URL ovde:
+  const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyv7EARAxNQyerb5NxIifCDMnDa3dzihsarYl8C-6vu2Q2f-6ltEN1urnx8PxykHMiuvA/exec";
 
-    function showErr(msg){ document.getElementById('result').innerHTML = `<div class="error">❌ ${msg}</div>`; }
-    function showHtml(html){ document.getElementById('result').innerHTML = html; }
+  // pomoćne
+  function showErr(msg){ document.getElementById('result').innerHTML = `<div class="error">❌ ${msg}</div>`; }
+  function showHtml(html){ document.getElementById('result').innerHTML = html; }
 
-    async function verify(ev){
-      if(ev) ev.preventDefault();
-      const code = (document.getElementById('kod').value||'').trim();
-      const lang = document.getElementById('lang').value;
-      const email = (document.getElementById('email')?.value||'').trim();
-      if(!code){ showErr('Unesite kod.'); return false; }
-      try{
-        const qs = new URLSearchParams({ kod: code, lang, email, ip: clientIP }).toString();
-        const res = await fetch(`${WEB_APP_URL}?${qs}`);
-        const html = await res.text();
-        showHtml(html);
-      }catch(e){ showErr('Greška u konekciji.'); }
-      return false;
+  // detekcija jezika stranice (fallback)
+  function detectPageLang(){
+    // 1) hidden input lang (ako postoji)
+    const hid = document.getElementById('lang');
+    if (hid && hid.value) return String(hid.value).toLowerCase();
+    // 2) <html lang="...">
+    const htmlLang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
+    if (htmlLang.startsWith('en')) return 'en';
+    if (htmlLang.startsWith('cs') || htmlLang.startsWith('cz')) return 'cz';
+    if (htmlLang.startsWith('sr') || htmlLang.startsWith('sh')) return 'sr';
+    // 3) naziv fajla
+    const p = window.location.pathname;
+    if (p.includes('placanje_en')) return 'en';
+    if (p.includes('placanje_cz')) return 'cz';
+    return 'sr';
+  }
+
+  async function verify(ev){
+    if(ev) ev.preventDefault();
+    const codeEl = document.getElementById('kod');
+    const emailEl = document.getElementById('email');
+    const langEl  = document.getElementById('lang');
+
+    const code = (codeEl?.value || '').trim();
+    let lang = (langEl?.value || '').trim().toLowerCase();
+    if (!lang) lang = detectPageLang();   // fallback na jezik stranice
+
+    const email = (emailEl?.value || '').trim();
+    if(!code){ showErr(lang==='en' ? 'Enter your code.' : (lang==='cz' ? 'Zadejte kód.' : 'Unesite kod.')); return false; }
+
+    // opcioni IP – ne kritično; ako propadne, nastavljamo
+    let clientIP = '';
+    try {
+      const r = await fetch('https://api.ipify.org?format=json', { cache: 'no-store' });
+      const j = await r.json(); clientIP = j.ip || '';
+    } catch (_) {}
+
+    try{
+      // prosleđujemo i referer = trenutna putanja stranice, da server zna sa kog jezika je došlo
+      const qs = new URLSearchParams({
+        kod: code,
+        lang,
+        email,
+        ip: clientIP,
+        referer: window.location.pathname
+      }).toString();
+
+      const res = await fetch(`${WEB_APP_URL}?${qs}`, { method: 'GET' });
+      const text = await res.text();
+      if(!res.ok){
+        showErr(`HTTP ${res.status}: ${text || 'Greška na serveru'}`);
+        return false;
+      }
+      showHtml(text);
+    }catch(err){
+      showErr((lang==='en' ? 'Connection error: ' : (lang==='cz' ? 'Chyba připojení: ' : 'Greška u konekciji: ')) + (err?.message || err));
     }
-  </script>
+    return false;
+  }
+</script>
+
 </body>
 </html>
 
@@ -209,7 +254,7 @@ File: placanje_en.html (EN)
   </div>
 
   <script>
-    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyv7EARAxNQyerb5NxIifCDMnDa3dzihsarYl8C-6vu2Q2f-6ltEN1urnx8PxykHMiuvA/exec";
+    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzKBoAMr48twIo_QZN746rbbOCLnJasfLzN76wRuuCw84RSRgjc7K6A9udgXkCEbdJidw/exec";
     let clientIP = "";
     (async ()=>{ try{ const r=await fetch('https://api.ipify.org?format=json'); const j=await r.json(); clientIP=j.ip||""; }catch(_){}})();
     function showErr(msg){ document.getElementById('result').innerHTML = `<div class="error">❌ ${msg}</div>`; }
