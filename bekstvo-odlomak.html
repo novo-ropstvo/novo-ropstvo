@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="sr" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- SEO START -->
+<title>Bekstvo iz pakla – odlomak | Marjan Mitrović</title>
+<meta name="description" content="Odlomak iz mračnog SF romana „Bekstvo iz pakla“ – identitet, kopije i pitanje žrtve.">
+<link rel="canonical" href="https://marjanmitrovic.github.io/novo-ropstvo/bekstvo-odlomak.html">
+
+<meta property="og:title" content="Bekstvo iz pakla – odlomak | Marjan Mitrović">
+<meta property="og:description" content="Odlomak iz mračnog SF romana „Bekstvo iz pakla“ – identitet, kopije i pitanje žrtve.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://marjanmitrovic.github.io/novo-ropstvo/bekstvo-odlomak.html">
+<meta property="og:image" content="https://marjanmitrovic.github.io/novo-ropstvo/images/cover-bekstvo.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bekstvo iz pakla – odlomak | Marjan Mitrović">
+<meta name="twitter:description" content="Odlomak iz mračnog SF romana „Bekstvo iz pakla“ – identitet, kopije i pitanje žrtve.">
+<meta name="twitter:image" content="https://marjanmitrovic.github.io/novo-ropstvo/images/cover-bekstvo.jpg">
+<!-- SEO END -->
+  <title>Bekstvo iz pakla – odlomak</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <style>
+*,*::before,*::after{box-sizing:border-box}
+    :root{--bg:#0b0c0e;--text:#e6e7e9;--muted:#9aa0a6;--card:#111214;--border:#23262a;--accent:#38bdf8}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial;background:var(--bg);color:var(--text);line-height:1.7}
+    a{color:var(--accent);text-decoration:none}
+    .container{width:min(1000px,92vw);margin:0 auto}
+    header{position:sticky;top:0;z-index:10;backdrop-filter:blur(6px);border-bottom:1px solid var(--border);background:color-mix(in srgb,var(--bg) 85%, transparent)}
+    .nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
+    .nav-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .btn,.chip{border:1px solid var(--border);border-radius:12px;padding:8px 14px;font-weight:600}
+    .btn{background:#0f172a;color:#fff}.btn-outline{background:var(--card);color:var(--text)}
+    .chip{background:var(--card);color:var(--text)}.chip[aria-current="true"]{border-color:var(--text)}
+    main{padding:28px 0 48px}
+
+    .hero{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;align-items:center}
+    .hero-img{grid-column:span 4}
+    .hero-img img{max-width:100%;height:auto;border-radius:16px;border:1px solid var(--border);display:block}
+    .hero-text{grid-column:span 8}
+    h1{font-size:32px;margin:0 0 10px}
+    .lede{color:var(--muted);margin-bottom:16px}
+    .synopsis{color:var(--muted);font-size:.95rem;margin-top:8px}
+    .narrow{width:min(680px,100%)}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px}
+    .card.contact{max-width:400px;margin:24px auto}
+    footer{text-align:center;border-top:1px solid var(--border);padding:24px 0;margin-top:40px;color:var(--muted)}
+    label.required::after{content:" *";color:#ef4444;font-weight:700}
+
+    /* Lepše polja */
+    .card.contact form{display:flex;flex-direction:column;gap:12px}
+    .card.contact input,
+    .card.contact textarea{
+      width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:8px;
+      background:var(--card);color:var(--text);font-size:0.95rem;
+      transition:border-color .2s,box-shadow .2s
+    }
+    .card.contact input:focus,
+    .card.contact textarea:focus{
+      outline:none;border-color:var(--accent);
+      box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 30%, transparent)
+    }
+    .card.contact button{
+      padding:10px 16px;border:none;border-radius:8px;
+      background:var(--accent);color:#fff;font-weight:600;cursor:pointer;
+      transition:background .2s,transform .2s
+    }
+    .card.contact button:hover{background:color-mix(in srgb,var(--accent) 80%, #000);transform:translateY(-1px)}
+    .card.contact button:active{transform:translateY(0)}
+    .card.contact p.muted{font-size:0.8rem;color:var(--muted);margin:0}
+
+  /* Ostale knjige */
+  .books-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+  .book-card{grid-column:span 12;display:grid;grid-template-columns:180px 1fr;gap:16px;padding:18px;background:var(--card);border:1px solid var(--border);border-radius:16px}
+  .book-cover{position:relative;display:block;border-radius:14px;overflow:hidden;border:1px solid var(--border);aspect-ratio:2/3}
+  .book-cover img{width:100%;height:100%;object-fit:cover;display:block}
+  .tag{position:absolute;left:10px;bottom:10px;font-size:12px;padding:6px 10px;border-radius:999px;background:rgba(0,0,0,.65);border:1px solid rgba(255,255,255,.18);color:var(--text)}
+  .book-title{margin:0 0 8px;font-size:20px}
+  .book-meta{color:var(--muted);margin:0 0 10px}
+  .book-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+  details.excerpt{margin-top:12px;border:1px solid var(--border);border-radius:12px;background:color-mix(in srgb,var(--card) 80%, #000);padding:10px 12px}
+  details.excerpt > summary{cursor:pointer;font-weight:700;color:var(--text)}
+  details.excerpt p{color:var(--muted);margin:10px 0 0}
+  @media (max-width:720px){.book-card{grid-template-columns:1fr} .book-cover{max-width:220px}}
+
+  .ex-hero{display:grid;grid-template-columns:240px 1fr;gap:16px;align-items:start}
+  .ex-cover{border-radius:16px;overflow:hidden;border:1px solid var(--border);background:var(--card)}
+  .ex-cover img{width:100%;height:auto;display:block}
+  .ex-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+  .ex-text{margin-top:14px;border:1px solid var(--border);border-radius:16px;background:var(--card);padding:18px}
+  .ex-text p{margin:0 0 12px;color:var(--muted);line-height:1.65}
+  .ex-text p:last-child{margin-bottom:0}
+  @media (max-width:900px){.ex-hero{grid-template-columns:1fr} .ex-cover{max-width:260px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="index.html"><img src="images/Cover.png" alt="Korica" style="height:48px;border-radius:6px"></a>
+      <div class="nav-actions">
+        <a class="btn btn-outline" href="knjige.html">Ostale knjige</a>
+        <a class="btn btn-outline" href="galerija.html">Galerija</a>
+        <a class="btn btn-outline" href="autor.html">O autoru</a>
+        <a class="btn" href="placanje.html?knjiga=bekstvo">Kupi EPUB</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <div class="ex-hero">
+        <div class="ex-cover">
+          <img src="images/cover-bekstvo.jpg" alt="Bekstvo iz pakla – korice">
+        </div>
+        <div>
+          <h1 style="margin:0 0 8px">Bekstvo iz pakla</h1>
+          <p class="lede" style="margin:0">Odlomak</p>
+          <div class="ex-actions">
+            <a class="btn" href="placanje.html?knjiga=bekstvo">Kupi EPUB</a>
+            <a class="btn btn-outline" href="knjige.html">Nazad</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ex-text" style="margin-top:16px">
+      <p>Pakao nije mesto sa vatrom, rogovima i krikovima koji se čuju na kilometre, jer takav pakao možeš da zamisliš, da mu se suprotstaviš, da ga prepoznaš i da mu, u krajnjoj liniji, pokušaš pobeći.</p>
+<p>Pravi pakao je mesto bez imena, bez adrese, bez dokaza da ikada postojiš, mesto na kome se ne gubi samo sloboda, već i uspomena na to šta znači imati je.</p>
+<p>Postoje zatvori koji se crtaju na mapama. Postoje logori o kojima se šapuće. Postoje fabrike koje se reklamiraju. A postoji i jedno mesto koje se ne pominje nigde. Zovu ga samo – Sektor 9.</p>
+      <div class="ex-actions" style="margin-top:14px">
+        <a class="btn" href="placanje.html?knjiga=bekstvo">Kupi EPUB</a>
+        <a class="btn btn-outline" href="knjige.html">Nazad na ostale knjige</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>© <span id="year"></span> Novo ropstvo. Sva prava zadržana.</div>
+  </footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>

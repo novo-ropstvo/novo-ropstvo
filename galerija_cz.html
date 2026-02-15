@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-<link rel="alternate" href="https://novo-ropstvo.github.io/novo-ropstvo/index.html" hreflang="sr" />
-<link rel="alternate" href="https://novo-ropstvo.github.io/novo-ropstvo/index_en.html" hreflang="en" />
-<link rel="alternate" href="https://novo-ropstvo.github.io/novo-ropstvo/index_cz.html" hreflang="cs" />
+<link rel="alternate" href="https://marjanmitrovic.github.io/novo-ropstvo/index.html" hreflang="sr" />
+<link rel="alternate" href="https://marjanmitrovic.github.io/novo-ropstvo/index_en.html" hreflang="en" />
+<link rel="alternate" href="https://marjanmitrovic.github.io/novo-ropstvo/index_cz.html" hreflang="cs" />
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -42,7 +42,18 @@
 <body>
 <header>
   <div class="container nav">
-    <a href="index_cz.html"><img src="images/cover-cz.png" alt="Obálka" style="height:48px;border-radius:6px"></a>
+    <a href="index_cz.html">
+      <img
+        src="images/cover-cz.png"
+        alt="Obálka"
+        style="height:48px;border-radius:6px"
+        width="48"
+        height="48"
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+      >
+    </a>
     <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
       <nav aria-label="Jazyk" style="display:flex;gap:6px">
         <a class="chip" href="galerija.html">SR</a>
@@ -53,7 +64,6 @@
       <a class="chip" href="ukazka.html">Ukázka</a>
       <a class="btn" href="placanje_cz.html">Koupit EPUB</a>
       <a href="donace.html" class="btn">Donace</a>
-
     </div>
   </div>
 </header>
@@ -67,23 +77,38 @@
 <div id="lightbox" class="lb" aria-hidden="true">
   <button class="close" aria-label="Zavřít">✕</button>
   <button class="prev" aria-label="Předchozí">←</button>
-  <img alt="Zvětšený obrázek">
+  <img alt="Zvětšený obrázek" decoding="async">
   <button class="next" aria-label="Další">→</button>
 </div>
 
 <script>
   const IMG_PATH='images', START=1, END=30;
-  const EXCLUDE=new Set([1,2,7,9,30]); // izbačene slike
+  const EXCLUDE=new Set([1,2,7,9,30]);
   const gallery=document.getElementById('gallery'); const items=[];
+
   for(let i=START;i<=END;i++){
     if(EXCLUDE.has(i)) continue;
     const src=`${IMG_PATH}/skica${i}.png`;
     items.push(src);
-    const a=document.createElement('a'); a.href=src; a.className='card'; a.setAttribute('role','listitem');
-    a.innerHTML=`<img src="${src}" alt="Skica ${i}" loading="lazy"><span class="cap">#${i}</span>`;
+
+    const a=document.createElement('a');
+    a.href=src; a.className='card'; a.setAttribute('role','listitem');
+    a.innerHTML=`
+      <img
+        src="${src}"
+        alt="Skica ${i}"
+        loading="lazy"
+        decoding="async"
+        fetchpriority="low"
+        width="360"
+        height="180"
+      >
+      <span class="cap">#${i}</span>
+    `;
     a.addEventListener('click',e=>{e.preventDefault();openLb(items.length-1);});
     gallery.appendChild(a);
   }
+
   const lb=document.getElementById('lightbox'), img=lb.querySelector('img');
   const c=lb.querySelector('.close'), p=lb.querySelector('.prev'), n=lb.querySelector('.next'); let idx=0;
   function openLb(i){idx=i;img.src=items[idx];lb.classList.add('open');lb.setAttribute('aria-hidden','false');}
@@ -95,3 +120,4 @@
 </script>
 </body>
 </html>
+

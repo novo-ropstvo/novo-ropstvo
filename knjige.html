@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="sr" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- SEO START -->
+<title>Ostale knjige | Marjan Mitrović</title>
+<meta name="description" content="Ostale knjige autora: Kapitalizam: Anatomija moći i nejednakosti, Između Lidica i Praškog proleća, Bekstvo iz pakla i Plankova suza.">
+<link rel="canonical" href="https://marjanmitrovic.github.io/novo-ropstvo/knjige.html">
+
+<meta property="og:title" content="Ostale knjige | Marjan Mitrović">
+<meta property="og:description" content="Ostale knjige autora: Kapitalizam: Anatomija moći i nejednakosti, Između Lidica i Praškog proleća, Bekstvo iz pakla i Plankova suza.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://marjanmitrovic.github.io/novo-ropstvo/knjige.html">
+<meta property="og:image" content="https://marjanmitrovic.github.io/novo-ropstvo/images/cover-plankova-suza.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ostale knjige | Marjan Mitrović">
+<meta name="twitter:description" content="Ostale knjige autora: Kapitalizam: Anatomija moći i nejednakosti, Između Lidica i Praškog proleća, Bekstvo iz pakla i Plankova suza.">
+<meta name="twitter:image" content="https://marjanmitrovic.github.io/novo-ropstvo/images/cover-plankova-suza.jpg">
+<!-- SEO END -->
+  <title>Ostale knjige – Marjan Mitrović</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <style>
+*,*::before,*::after{box-sizing:border-box}
+    :root{--bg:#0b0c0e;--text:#e6e7e9;--muted:#9aa0a6;--card:#111214;--border:#23262a;--accent:#38bdf8}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial;background:var(--bg);color:var(--text);line-height:1.7}
+    a{color:var(--accent);text-decoration:none}
+    .container{width:min(1000px,92vw);margin:0 auto}
+    header{position:sticky;top:0;z-index:10;backdrop-filter:blur(6px);border-bottom:1px solid var(--border);background:color-mix(in srgb,var(--bg) 85%, transparent)}
+    .nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
+    .nav-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .btn,.chip{border:1px solid var(--border);border-radius:12px;padding:8px 14px;font-weight:600}
+    .btn{background:#0f172a;color:#fff}.btn-outline{background:var(--card);color:var(--text)}
+    .chip{background:var(--card);color:var(--text)}.chip[aria-current="true"]{border-color:var(--text)}
+    main{padding:28px 0 48px}
+
+    .hero{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;align-items:center}
+    .hero-img{grid-column:span 4}
+    .hero-img img{max-width:100%;height:auto;border-radius:16px;border:1px solid var(--border);display:block}
+    .hero-text{grid-column:span 8}
+    h1{font-size:32px;margin:0 0 10px}
+    .lede{color:var(--muted);margin-bottom:16px}
+    .synopsis{color:var(--muted);font-size:.95rem;margin-top:8px}
+    .narrow{width:min(680px,100%)}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px}
+    .card.contact{max-width:400px;margin:24px auto}
+    footer{text-align:center;border-top:1px solid var(--border);padding:24px 0;margin-top:40px;color:var(--muted)}
+    label.required::after{content:" *";color:#ef4444;font-weight:700}
+
+    /* Lepše polja */
+    .card.contact form{display:flex;flex-direction:column;gap:12px}
+    .card.contact input,
+    .card.contact textarea{
+      width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:8px;
+      background:var(--card);color:var(--text);font-size:0.95rem;
+      transition:border-color .2s,box-shadow .2s
+    }
+    .card.contact input:focus,
+    .card.contact textarea:focus{
+      outline:none;border-color:var(--accent);
+      box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 30%, transparent)
+    }
+    .card.contact button{
+      padding:10px 16px;border:none;border-radius:8px;
+      background:var(--accent);color:#fff;font-weight:600;cursor:pointer;
+      transition:background .2s,transform .2s
+    }
+    .card.contact button:hover{background:color-mix(in srgb,var(--accent) 80%, #000);transform:translateY(-1px)}
+    .card.contact button:active{transform:translateY(0)}
+    .card.contact p.muted{font-size:0.8rem;color:var(--muted);margin:0}
+
+  /* Ostale knjige */
+  .books-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+  .book-card{grid-column:span 12;display:grid;grid-template-columns:180px 1fr;gap:16px;padding:18px;background:var(--card);border:1px solid var(--border);border-radius:16px}
+  .book-cover{position:relative;display:block;border-radius:14px;overflow:hidden;border:1px solid var(--border);aspect-ratio:2/3}
+  .book-cover img{width:100%;height:100%;object-fit:cover;display:block}
+  .tag{position:absolute;left:10px;bottom:10px;font-size:12px;padding:6px 10px;border-radius:999px;background:rgba(0,0,0,.65);border:1px solid rgba(255,255,255,.18);color:var(--text)}
+  .book-title{margin:0 0 8px;font-size:20px}
+  .book-meta{color:var(--muted);margin:0 0 10px}
+  .book-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+  details.excerpt{margin-top:12px;border:1px solid var(--border);border-radius:12px;background:color-mix(in srgb,var(--card) 80%, #000);padding:10px 12px}
+  details.excerpt > summary{cursor:pointer;font-weight:700;color:var(--text)}
+  details.excerpt p{color:var(--muted);margin:10px 0 0}
+  @media (max-width:720px){.book-card{grid-template-columns:1fr} .book-cover{max-width:220px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="index.html"><img src="images/Cover.png" alt="Korica" style="height:48px;border-radius:6px"></a>
+      <div class="nav-actions">
+        <nav aria-label="Jezik" style="display:flex;gap:6px">
+          <a class="chip" href="knjige.html" aria-current="true">SR</a>
+          <a class="chip" href="knjige_en.html">EN</a>
+          <a class="chip" href="knjige_cz.html">CZ</a>
+        </nav>
+        <a class="btn btn-outline" href="index.html">Početna</a>
+        <a class="btn btn-outline" href="odlomak.html">Odlomak</a>
+        <a class="btn btn-outline" href="galerija.html">Galerija</a>
+        <a class="btn btn-outline" href="autor.html">O autoru</a>
+        <a class="btn" href="placanje.html">Kupi EPUB</a>
+        <a href="donacije.html" class="btn">Donacije</a>
+        <a href="recenzije.html" class="btn">Recenzije</a>
+        <a class="btn btn-outline" href="knjige.html" aria-current="page">Ostale knjige</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h1 style="margin:0 0 6px">Ostale knjige</h1>
+      <p class="lede" style="margin:0">Ovde su predstavljene ostale knjige: cover, sinopsis, odlomak i kupovina EPUB.</p>
+    </section>
+
+    <section style="margin-top:16px">
+      <div class="books-grid">
+
+        <!-- KAPITALIZAM -->
+        <article class="book-card">
+          <a class="book-cover" href="#" aria-label="Kapitalizam – korice">
+            <img src="images/cover-kapitalizam.jpg" alt="Kapitalizam: Anatomija moći i nejednakosti – korice" loading="lazy">
+          </a>
+          <div>
+            <h2 class="book-title">Kapitalizam: Anatomija moći i nejednakosti</h2>
+            <p class="book-meta">Sinopsis:</p>
+            <p class="synopsis">Ova knjiga predstavlja analitičko i istorijsko seciranje kapitalizma kao sistema moći, a ne samo ekonomskog modela. Autor razmatra kako su neoliberalne reforme, privatizacije i globalizacija oblikovale savremena društva, stvarajući duboke socijalne razlike, političku manipulaciju i krizu identiteta.
+
+Kroz istorijske primere, političku analizu i savremene geopolitičke procese, knjiga postavlja pitanje: da li je kapitalizam sistem slobode — ili sofisticirani mehanizam kontrole?</p>
+
+            <div class="book-actions">
+              <a class="btn btn-outline" href="kapitalizam-odlomak.html">Pročitaj odlomak</a>
+              <a class="btn" href="placanje.html?knjiga=kapitalizam">Kupi EPUB</a>
+            </div>
+</div>
+        </article>
+
+        <!-- IZMEĐU LIDICA -->
+        <article class="book-card">
+          <a class="book-cover" href="#" aria-label="Između Lidica – korice">
+            <img src="images/cover-lidice.jpg" alt="Između Lidica – korice" loading="lazy">
+          </a>
+          <div>
+            <h2 class="book-title">Između Lidica</h2>
+            <p class="book-meta">Sinopsis:</p>
+            <p class="synopsis">„Između Lidica i Praškog proleća“ je dubinska analiza češkog istorijskog identiteta, smeštenog između dva traumatična simbola 20. veka – nacističkog uništenja i ugušene nade 1968. godine.
+
+Knjiga istražuje kako selektivno pamćenje, politička reinterpretacija prošlosti i savremeni geopolitički narativi oblikuju današnju Češku.
+
+Autor postavlja ključno pitanje: da li društvo koje ne razume sopstvenu prošlost može izgraditi stabilnu budućnost?</p>
+
+            <div class="book-actions">
+              <a class="btn btn-outline" href="lidice-odlomak.html">Pročitaj odlomak</a>
+              <a class="btn btn-outline" href="lidice-odlomak_cz.html">CZ ukazka</a>
+
+              <a class="btn" href="placanje.html?knjiga=lidice">Kupi EPUB</a>
+            </div>
+</div>
+        </article>
+
+        <!-- BEKSTVO IZ PAKLA -->
+        <article class="book-card">
+          <a class="book-cover" href="#" aria-label="Bekstvo iz pakla – korice">
+            <img src="images/cover-bekstvo.jpg" alt="Bekstvo iz pakla – korice" loading="lazy">
+          </a>
+          <div>
+            <h2 class="book-title">Bekstvo iz pakla</h2>
+            <p class="book-meta">Sinopsis:</p>
+            <p class="synopsis">Mračna naučno-fantastična priča o svetu u kome ljudi postaju sirovina za proizvodnju savršenih kopija.
+
+Glavni junak budi se u sistemu koji briše identitet, prošlost i sećanje. Dok pokušava da shvati gde se nalazi, otkriva da je postao deo eksperimenta koji može uništiti čitav poredak — ali samo po cenu sopstvenog postojanja.
+
+Roman postavlja pitanje: da li je sloboda vredna žrtve sopstvenog dvojnika?</p>
+
+            <div class="book-actions">
+              <a class="btn btn-outline" href="bekstvo-odlomak.html">Pročitaj odlomak</a>
+              <a class="btn" href="placanje.html?knjiga=bekstvo">Kupi EPUB</a>
+            </div>
+</div>
+        </article>
+
+        <!-- PLANKOVA SUZA (COVER KAO DUGME NA POSEBNU STRANICU) -->
+        <article class="book-card">
+          <a class="book-cover" href="plankova-suza.html" aria-label="Plankova suza – otvori stranicu">
+            <img src="images/cover-plankova-suza.jpg" alt="Plankova suza – korice" loading="lazy">
+            <span class="tag">Vizuali + odlomci</span>
+          </a>
+          <div>
+            <h2 class="book-title">Plankova suza</h2>
+            <p class="book-meta">Sinopsis:</p>
+            <p class="synopsis">Plankova suza je filozofski naučnofantastični roman koji istražuje granice realnosti, svesti i kvantne fizike.
+
+U svetu gde se subatomski univerzumi sudaraju sa ljudskom percepcijom, grupa istraživača dolazi do otkrića koje menja poimanje postojanja.
+
+Roman kombinuje naučnu teoriju, egzistencijalnu dramu i metafizičku potragu za istinom — u prostoru gde se vreme lomi, a identitet postaje relativan.</p>
+
+            <div class="book-actions">
+              <a class="btn btn-outline" href="plankova-suza.html#odlomci">Pročitaj odlomak</a>
+              <a class="btn" href="placanje.html?knjiga=plankova_suza">Kupi EPUB</a>
+            </div>
+
+            <p class="synopsis" style="margin-top:8px">
+              Cover je link na posebnu stranicu sa galerijom i odlomcima.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>© <span id="year"></span> Novo ropstvo. Sva prava zadržana.</div>
+  </footer>
+
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>

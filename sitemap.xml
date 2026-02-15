@@ -1,60 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://novo-ropstvo.github.io/novo-ropstvo/</loc>
+    <loc>https://TVOJ-DOMEN.tld/index.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://novo-ropstvo.github.io/novo-ropstvo/index.html</loc>
+    <loc>https://TVOJ-DOMEN.tld/knjige.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://novo-ropstvo.github.io/novo-ropstvo/index_en.html</loc>
+    <loc>https://TVOJ-DOMEN.tld/plankova-suza.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://novo-ropstvo.github.io/novo-ropstvo/index_cz.html</loc>
+    <loc>https://TVOJ-DOMEN.tld/kapitalizam-odlomak.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://novo-ropstvo.github.io/novo-ropstvo/placanje.html</loc>
+    <loc>https://TVOJ-DOMEN.tld/lidice-odlomak.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://novo-ropstvo.github.io/novo-ropstvo/placanje_en.html</loc>
+    <loc>https://TVOJ-DOMEN.tld/bekstvo-odlomak.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://novo-ropstvo.github.io/novo-ropstvo/placanje_cz.html</loc>
+    <loc>https://TVOJ-DOMEN.tld/odlomak.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://novo-ropstvo.github.io/novo-ropstvo/kod.html</loc>
+    <loc>https://TVOJ-DOMEN.tld/galerija.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://novo-ropstvo.github.io/novo-ropstvo/kod_en.html</loc>
+    <loc>https://TVOJ-DOMEN.tld/autor.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://novo-ropstvo.github.io/novo-ropstvo/kod_cz.html</loc>
+    <loc>https://TVOJ-DOMEN.tld/placanje.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://novo-ropstvo.github.io/novo-ropstvo/kontakt.html</loc>
+    <loc>https://TVOJ-DOMEN.tld/donacije.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://novo-ropstvo.github.io/novo-ropstvo/kontakt_en.html</loc>
+    <loc>https://TVOJ-DOMEN.tld/recenzije.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://novo-ropstvo.github.io/novo-ropstvo/kontakt_cz.html</loc>
-  </url>
-  <url>
-    <loc>https://novo-ropstvo.github.io/novo-ropstvo/galerija.html</loc>
-  </url>
-  <url>
-    <loc>https://novo-ropstvo.github.io/novo-ropstvo/galerija_en.html</loc>
-  </url>
-  <url>
-    <loc>https://novo-ropstvo.github.io/novo-ropstvo/galerija_cz.html</loc>
-  </url>
-  <url>
-    <loc>https://novo-ropstvo.github.io/novo-ropstvo/dobij-kod.html</loc>
-  </url>
-  <url>
-    <loc>https://novo-ropstvo.github.io/novo-ropstvo/odlomak.html</loc>
-  </url>
-  <url>
-    <loc>https://novo-ropstvo.github.io/novo-ropstvo/ukazka.html</loc>
+    <loc>https://marjanmitrovic.github.io/novo-ropstvo/lidice-odlomak_cz.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>

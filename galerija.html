@@ -2,17 +2,20 @@
 <html lang="sr">
 <head>
 <meta property="og:title" content="Novo Ropstvo – Marjan Mitrović">
-<meta property="og:image" content="https://novo-ropstvo.github.io/novo-ropstvo/images/cover.png">
+<meta property="og:image" content="https://marjanmitrovic.github.io/novo-ropstvo/images/cover.png">
 <meta property="og:description" content="Zvanična stranica romana 'Novo Ropstvo'.">
 
-<link rel="alternate" href="https://novo-ropstvo.github.io/novo-ropstvo/index.html" hreflang="sr" />
-<link rel="alternate" href="https://novo-ropstvo.github.io/novo-ropstvo/index_en.html" hreflang="en" />
-<link rel="alternate" href="https://novo-ropstvo.github.io/novo-ropstvo/index_cz.html" hreflang="cs" />
+<link rel="alternate" href="https://marjanmitrovic.github.io/novo-ropstvo/index.html" hreflang="sr" />
+<link rel="alternate" href="https://marjanmitrovic.github.io/novo-ropstvo/index_en.html" hreflang="en" />
+<link rel="alternate" href="https://marjanmitrovic.github.io/novo-ropstvo/index_cz.html" hreflang="cs" />
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Novo ropstvo — Galerija</title>
+
+<!-- Uskladi sa realnim imenom fajla (case-sensitive na GitHub Pages) -->
 <link rel="icon" href="images/Cover.png">
+
 <style>
   :root{--bg:#0b0c0e;--text:#e6e7e9;--muted:#9aa0a6;--card:#111214;--border:#23262a;--accent:#38bdf8}
   *{box-sizing:border-box}
@@ -50,7 +53,18 @@
 <body>
 <header>
   <div class="container nav">
-    <a href="index.html"><img src="images/Cover.png" alt="Korica" style="height:48px;border-radius:6px"></a>
+    <a href="index.html">
+      <img
+        src="images/Cover.png"
+        alt="Korica"
+        style="height:48px;border-radius:6px"
+        width="48"
+        height="48"
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+      >
+    </a>
     <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
       <nav aria-label="Jezik" style="display:flex;gap:6px">
         <a class="chip" href="galerija.html" aria-current="true">SR</a>
@@ -61,7 +75,6 @@
       <a class="chip" href="odlomak.html">Odlomak</a>
       <a class="btn" href="placanje.html">Kupi EPUB</a>
       <a href="donacije.html" class="btn">Donacije</a>
-
     </div>
   </div>
 </header>
@@ -77,29 +90,41 @@
 <div id="lightbox" class="lb" aria-hidden="true">
   <button class="close" aria-label="Zatvori">✕</button>
   <button class="prev" aria-label="Prethodna">←</button>
-  <img alt="Uvećana slika">
+  <img alt="Uvećana slika" decoding="async">
   <button class="next" aria-label="Sledeća">→</button>
 </div>
 
 <script>
-  // Podesi opseg i putanju (menjaj ovde ako treba)
   const IMG_PATH = 'images';
   const START = 1, END = 30;
 
   const gallery = document.getElementById('gallery');
   const items = [];
+
   for (let i = START; i <= END; i++) {
     const src = `${IMG_PATH}/skica${i}.png`;
     items.push(src);
+
     const card = document.createElement('a');
     card.href = src;
     card.className = 'card';
-    card.setAttribute('role','listitem');
+    card.setAttribute('role', 'listitem');
+
+    // Minimalno: dodaj width/height + decoding + fetchpriority
     card.innerHTML = `
-      <img src="${src}" alt="Skica ${i}" loading="lazy">
+      <img
+        src="${src}"
+        alt="Skica ${i}"
+        loading="lazy"
+        decoding="async"
+        fetchpriority="low"
+        width="360"
+        height="180"
+      >
       <span class="cap">#${i}</span>
     `;
-    card.addEventListener('click', (e) => { e.preventDefault(); openLb(i-1); });
+
+    card.addEventListener('click', (e) => { e.preventDefault(); openLb(i - 1); });
     gallery.appendChild(card);
   }
 
@@ -111,19 +136,38 @@
   const btnNext = lb.querySelector('.next');
   let idx = 0;
 
-  function openLb(i){ idx = i; lbImg.src = items[idx]; lb.classList.add('open'); lb.setAttribute('aria-hidden','false'); }
-  function closeLb(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); lbImg.src=''; }
-  function prev(){ idx = (idx - 1 + items.length) % items.length; lbImg.src = items[idx]; }
-  function next(){ idx = (idx + 1) % items.length; lbImg.src = items[idx]; }
+  function openLb(i){
+    idx = i;
+    lbImg.src = items[idx];
+    lb.classList.add('open');
+    lb.setAttribute('aria-hidden', 'false');
+  }
+  function closeLb(){
+    lb.classList.remove('open');
+    lb.setAttribute('aria-hidden', 'true');
+    lbImg.src = '';
+  }
+  function prev(){
+    idx = (idx - 1 + items.length) % items.length;
+    lbImg.src = items[idx];
+  }
+  function next(){
+    idx = (idx + 1) % items.length;
+    lbImg.src = items[idx];
+  }
 
-  btnClose.onclick = closeLb; btnPrev.onclick = prev; btnNext.onclick = next;
-  lb.addEventListener('click', (e)=>{ if(e.target===lb) closeLb(); });
-  window.addEventListener('keydown', (e)=>{
-    if(!lb.classList.contains('open')) return;
-    if(e.key==='Escape') closeLb();
-    if(e.key==='ArrowLeft') prev();
-    if(e.key==='ArrowRight') next();
+  btnClose.onclick = closeLb;
+  btnPrev.onclick = prev;
+  btnNext.onclick = next;
+
+  lb.addEventListener('click', (e) => { if (e.target === lb) closeLb(); });
+  window.addEventListener('keydown', (e) => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLb();
+    if (e.key === 'ArrowLeft') prev();
+    if (e.key === 'ArrowRight') next();
   });
 </script>
 </body>
 </html>
+
